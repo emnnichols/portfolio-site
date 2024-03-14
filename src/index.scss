@@ -1,0 +1,318 @@
+$primary: rgb(175, 225, 175);
+$secondary: rgba(143, 188, 143, 0.5);
+$navBar: rgba(143, 188, 143, 0.2);
+$body-bg: #f8f8ff;
+$primary-font: "Urbanist", sans-serif;
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+.introCard {
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 2px;
+  font-variant: all-small-caps;
+  font-size: 18px;
+}
+
+.homeIntro {
+  margin-left: 40px;
+  display: inline-block;
+}
+
+.introText {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.standout {
+  color: black;
+  font-size: 13px;
+  font-variant: normal;
+}
+
+.portrait {
+  margin-left: 10%;
+  border-radius: 50%;
+  border: 1px dotted #50615a;
+}
+
+.card {
+  color: #50615a;
+  padding: 100px 0px;
+  border-radius: 25px;
+  border: 1px solid #50615a;
+  box-shadow: 5px 5px 12px 2px #50615ab5;
+}
+
+.cardTitle {
+  font-family: $primary-font;
+  font-size: 40px;
+  text-align: center;
+  font-variant: all-small-caps;
+}
+
+.cardText {
+  text-align: center;
+}
+
+.projectImage {
+  border-radius: 5px;
+}
+
+.projectBlurb {
+  text-align: center;
+  font-style: italic;
+}
+
+.primaryButton,
+.primaryButton:hover {
+  cursor: crosshair;
+}
+
+.primaryButton {
+  background-color: $navBar;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing: 3px;
+  font-variant: all-small-caps;
+  border-radius: 10px;
+  transition: all 0.9s;
+}
+
+.primaryButton:hover {
+  background-color: $body-bg;
+  letter-spacing: 5px;
+  box-shadow: rgba(143, 188, 143, 0.5) 0px 0px 10px 2px;
+  transition: all 0.9s;
+}
+
+.disabledButton {
+  background-color: rgba(128, 128, 128, 0.1);
+  padding-top: 7px;
+  padding-bottom: 9px;
+  font-size: 15px;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 3px;
+  font-variant: all-small-caps;
+  border-radius: 10px;
+  transition: all 0.9s;
+  cursor: not-allowed;
+}
+
+.disabledButton:hover {
+  letter-spacing: 5px;
+  background-color: rgba(128, 128, 128, 0.3);
+  transition: all 0.9s;
+}
+
+.formLabel {
+  font-family: "Urbanist", sans-serif;
+  font-size: 18px;
+  font-variant: all-small-caps;
+}
+
+.formInput {
+  padding-top: 7px;
+  width: 100%;
+  font-style: italic;
+  font-size: 13px;
+}
+
+// Footer
+
+.footer {
+  font-family: "Urbanist", sans-serif;
+  font-variant: all-small-caps;
+  text-align: center;
+}
+
+// responsive
+
+@media all and (max-width: 550px) {
+  .navRow {
+    background-color: rgba(205, 205, 205, 0.2);
+    border-radius: 0px;
+    padding-top: 20px;
+  }
+
+  .navList {
+    margin-left: -4%;
+  }
+
+  .navItem {
+    padding-right: 70px;
+  }
+
+  .navMiddle {
+    padding-right: 79px;
+  }
+
+  .introText {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+
+  .card {
+    padding: 50px 0px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #50615a59;
+  }
+
+  .portrait {
+    margin-left: 12%;
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 551px) and (max-width: 750px) {
+  .navRow {
+    background-color: rgba(205, 205, 205, 0.2);
+    border-radius: 0px;
+  }
+
+  .navBrand {
+    padding-top: 17px;
+  }
+
+  .navList {
+    margin-left: 0%;
+  }
+
+  .navItem {
+    padding-right: 75px;
+  }
+
+  .navMiddle {
+    padding-right: 72px;
+  }
+
+  .introText {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+
+  .card {
+    padding: 50px 0px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #50615a59;
+  }
+
+
+  .portrait {
+    margin-left: 15%;
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 751px) and (max-width: 767px) {
+  .navRow {
+    background-color: rgba(205, 205, 205, 0.2);
+    border-radius: 0px;
+  }
+
+  .navBrand {
+    padding-top: 17px;
+  }
+
+  .navList {
+    margin-left: 3%;
+  }
+
+  .navItem {
+    padding-right: 50px;
+  }
+
+  .navMiddle {
+    padding-right: 56px;
+  }
+
+  .introText {
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+
+  .card {
+    padding: 50px 0px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #50615a59;
+  }
+
+  .portrait {
+    margin-left: 17%;
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .navRow {
+    background-color: rgba(205, 205, 205, 0.2);
+    border-radius: 5px;
+    padding-top: 20px;
+  }
+
+  .navList {
+    margin-left: 12%;
+  }
+
+  .navItem {
+    padding-right: 70px;
+  }
+
+  .navMiddle {
+    padding-right: 78px;
+  }
+
+  .introText {
+    padding: 50px 10px 0px 30px;
+  }
+
+  .card {
+    padding: 50px 0px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #50615a59;
+  }
+
+  .portrait {
+    margin-left: 25%;
+    border-radius: 10px;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 1200px) {
+
+  .navList {
+    margin-left: 26%;
+  }
+
+  .navItem {
+    padding-right: 75px;
+  }
+
+  .navMiddle {
+    padding-right: 82px;
+  }
+
+  .introText {
+    padding: 6% 0% 0% 10%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+
+  .navList {
+    margin-left: 37%;
+  }
+
+  .navItem {
+    padding-right: 75px;
+  }
+
+  .navMiddle {
+    padding-right: 82px;
+  }
+}
