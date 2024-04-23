@@ -8,9 +8,9 @@ import { baseUrl } from "../constants";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { Footer } from "../footer-bar/footer-bar";
 import { AboutView } from "../about-view/about-view";
-import { ProjectsView } from "../projects-view/projects-view";
 import { DetailsView } from "../details-view/details-view";
 import { ContactView } from "../contact-view/contact-view";
+import { FeaturedProject } from "../projects-view/featured-project";
 
 export const MainView = () => {
   const [projects, setProjects] = useState([]);
@@ -30,7 +30,8 @@ export const MainView = () => {
             image: project.Image,
             features: project.Features,
             blurb: project.Blurb,
-            live: project.Live
+            live: project.Live,
+            featured: project.Featured
           };
         });
 
@@ -51,13 +52,13 @@ export const MainView = () => {
                   <Card className="card">
                     <Card.Body>
                       <Row className="introCard">
-                        <Col lg={4} className="col-12"><img src={portrait} width="340px" className="portrait" /></Col>
+                        <Col lg={4} md={12} className="col-12"><img src={portrait} width="340px" className="portrait" /></Col>
                         {/* <Card.Title>My name is Emily Nichols.</Card.Title>
                         <br />
                         <Card.Subtitle>
                           I'm a &#160;<span className="standout">&nbsp;&lt; web developer /&gt;&nbsp;</span>&#160; located in Las Vegas, Nevada.
                         </Card.Subtitle> */}
-                        <Col lg={8} className="col-12">
+                        <Col lg={8} md={12} className="col-12">
                           <Card.Text className="introText">
                             {`<!DOCTYPE introduction>`}<br />
                             &#160;&#160;
@@ -91,14 +92,9 @@ export const MainView = () => {
           <Route
             path="/projects"
             element={
-              projects.map((project) => {
-                return (
-                  <Col className="mb-4" key={`${project.id}_project_list`} lg={4} md={6} sm={12}>
-                    <ProjectsView
-                      project={project} />
-                  </Col>
-                )
-              })
+              <>
+                <FeaturedProject projects={projects} />
+              </>
             }
           />
           <Route

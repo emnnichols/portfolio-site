@@ -19,14 +19,18 @@ $primary-font: "Urbanist", sans-serif;
 }
 
 .introText {
+  padding-left: 5%;
   padding-top: 5%;
   padding-bottom: 5%;
+  color: #50615aae;
+
 }
 
 .standout {
   color: black;
-  font-size: 13px;
+  font-size: 14px;
   font-variant: normal;
+
 }
 
 .portrait {
@@ -35,15 +39,39 @@ $primary-font: "Urbanist", sans-serif;
   border: 1px dotted #50615a;
 }
 
+.aboutPortrait {
+  border-radius: 50% 50% 0% 0%;
+  height: 300px;
+  width: 290px;
+}
+
 .card {
   color: #50615a;
-  padding: 100px 0px;
-  border-radius: 25px;
+  padding: 25px 0px 50px 0px;
+  border-radius: 20px;
   border: 1px solid #50615a;
+  margin-top: 40px;
   box-shadow: 5px 5px 12px 2px #50615ab5;
 }
 
-.cardTitle {
+.aboutTitle {
+  font-family: $primary-font;
+  font-variant: all-small-caps;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.aboutText {
+  text-align: center;
+  color: #000000;
+  padding: 0px 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.cardTitle,
+.featuredTitle {
   font-family: $primary-font;
   font-size: 40px;
   text-align: center;
@@ -55,12 +83,20 @@ $primary-font: "Urbanist", sans-serif;
 }
 
 .projectImage {
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 2px;
 }
 
 .projectBlurb {
   text-align: center;
   font-style: italic;
+}
+
+.currentProject {
+  font-family: "Silkscreen", sans-serif;
+  font-size: 40px;
+  text-shadow: 4px 4px 5px rgba(80, 97, 90, 0.5);
+  margin-top: 0px;
 }
 
 .primaryButton,
@@ -129,23 +165,19 @@ $primary-font: "Urbanist", sans-serif;
 
 // responsive
 
-@media all and (max-width: 550px) {
-  .navRow {
-    background-color: rgba(205, 205, 205, 0.2);
-    border-radius: 0px;
-    padding-top: 20px;
+@media all and (max-width: 767px) {
+  .homeLink {
+    margin-right: 50px;
   }
 
-  .navList {
-    margin-left: -4%;
+  .navLinks {
+    margin-top: -30px;
+    margin-left: 13px;
   }
 
-  .navItem {
-    padding-right: 70px;
-  }
-
-  .navMiddle {
-    padding-right: 79px;
+  .navBrand {
+    padding-top: 30px;
+    padding-left: 40px;
   }
 
   .introText {
@@ -164,28 +196,30 @@ $primary-font: "Urbanist", sans-serif;
     margin-left: 12%;
     border-radius: 10px;
   }
+
+  .aboutPortrait {
+    margin-left: 23%;
+    height: 280px;
+    width: 280px;
+  }
 }
 
-@media all and (min-width: 551px) and (max-width: 750px) {
-  .navRow {
-    background-color: rgba(205, 205, 205, 0.2);
-    border-radius: 0px;
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .homeLink {
+    margin-right: 50px;
+  }
+
+  .navLinks {
+    margin-top: -30px;
+    margin-left: 15px;
   }
 
   .navBrand {
-    padding-top: 17px;
+    padding-top: 30px;
   }
 
-  .navList {
-    margin-left: 0%;
-  }
-
-  .navItem {
-    padding-right: 75px;
-  }
-
-  .navMiddle {
-    padding-right: 72px;
+  .navBar {
+    padding-right: 35px;
   }
 
   .introText {
@@ -199,39 +233,44 @@ $primary-font: "Urbanist", sans-serif;
     border-radius: 10px;
     box-shadow: 0px 0px 15px 0px #50615a59;
   }
-
 
   .portrait {
     margin-left: 15%;
     border-radius: 10px;
   }
+
+  .aboutPortrait {
+    height: 280px;
+    width: 300px;
+  }
+
+  .featuredProject {
+    height: fit-content;
+  }
+
+  .featuredTitle {
+    margin-top: 10px;
+  }
+
+  .featuredProjectImage {
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
-@media all and (min-width: 751px) and (max-width: 767px) {
-  .navRow {
-    background-color: rgba(205, 205, 205, 0.2);
-    border-radius: 0px;
+@media all and (min-width: 992px) and (max-width: 1197px) {
+
+  .homeLink {
+    margin-right: 50px;
   }
 
-  .navBrand {
-    padding-top: 17px;
-  }
-
-  .navList {
-    margin-left: 3%;
-  }
-
-  .navItem {
+  .navBar {
     padding-right: 50px;
   }
 
-  .navMiddle {
-    padding-right: 56px;
-  }
-
   .introText {
-    padding-top: 50px;
-    padding-bottom: 0px;
+    padding: 30px 5px 0px 110px;
   }
 
   .card {
@@ -242,32 +281,33 @@ $primary-font: "Urbanist", sans-serif;
   }
 
   .portrait {
-    margin-left: 17%;
+    margin-left: 10%;
+  }
+
+  .featuredProject {
+    height: 500px;
+  }
+
+  .featuredInfo {
+    margin-right: 40px;
+  }
+
+  .featuredTitle {
+    margin-top: 90px;
+  }
+
+  .featuredProjectImage {
     border-radius: 10px;
+    margin-top: 10px;
+    height: 401px;
+    width: 100%;
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
-  .navRow {
-    background-color: rgba(205, 205, 205, 0.2);
-    border-radius: 5px;
-    padding-top: 20px;
-  }
-
-  .navList {
-    margin-left: 12%;
-  }
-
-  .navItem {
-    padding-right: 70px;
-  }
-
-  .navMiddle {
-    padding-right: 78px;
-  }
+@media all and (min-width: 1198px) and (max-width: 1201px) {
 
   .introText {
-    padding: 50px 10px 0px 30px;
+    padding: 25px 5px 0px 110px;
   }
 
   .card {
@@ -277,42 +317,82 @@ $primary-font: "Urbanist", sans-serif;
     box-shadow: 0px 0px 15px 0px #50615a59;
   }
 
-  .portrait {
-    margin-left: 25%;
+  .featuredProject {
+    height: 500px;
+  }
+
+  .featuredInfo {
+    margin-right: 40px;
+  }
+
+  .featuredTitle {
+    margin-top: 90px;
+  }
+
+  .featuredProjectImage {
     border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 40px;
+    height: 410px;
+    width: 87%;
   }
 }
 
-@media all and (min-width: 992px) and (max-width: 1200px) {
-
-  .navList {
-    margin-left: 26%;
+@media all and (min-width: 1202px) and (max-width: 1400px) {
+  .homeLink {
+    margin-right: 50px;
   }
 
-  .navItem {
-    padding-right: 75px;
+  .introText {
+    padding: 6% 0% 0% 20%;
   }
 
-  .navMiddle {
-    padding-right: 82px;
+  .featuredProject {
+    height: 550px;
+  }
+
+  .featuredInfo {
+    margin-right: 10px;
+  }
+
+  .featuredTitle {
+    margin-top: 90px;
+  }
+
+  .featuredProjectImage {
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 450px;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .homeLink {
+    margin-right: 50px;
   }
 
   .introText {
     padding: 6% 0% 0% 10%;
   }
-}
 
-@media all and (min-width: 1200px) {
-
-  .navList {
-    margin-left: 37%;
+  .featuredProject {
+    height: 550px;
   }
 
-  .navItem {
-    padding-right: 75px;
+  .featuredInfo {
+    margin-right: 50px;
   }
 
-  .navMiddle {
-    padding-right: 82px;
+  .featuredTitle {
+    margin-top: 90px;
+  }
+
+  .featuredProjectImage {
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 45px;
+    height: 450px;
+    width: 85%;
   }
 }
