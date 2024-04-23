@@ -8,14 +8,14 @@ export const NavigationBar = () => {
   return (
     <>
       <Row className="navLinks">
-        <Col lg={6} className="col-12"><Navbar className="navBrand justify-content-md-center" expand="sm">
+        <Col lg={6} className="col-12"><Navbar className="navBrand justify-content-md-center">
           <Row>
             <Navbar.Brand as={Link} to="/">
               <span className="navTitle navBar"> &nbsp;&lt; &#160; emily nichols &#160; / &gt;&nbsp; </span>
             </Navbar.Brand></Row>
         </Navbar></Col>
 
-        <Col lg={6} className="col-12"><Navbar className="navLinks justify-content-md-center" expand="sm">
+        <Col lg={6} className="col-12"><Navbar className="navLinks justify-content-md-center">
           <Row>
             <Nav className="h3">
               <Col className="col-2 navItem">
