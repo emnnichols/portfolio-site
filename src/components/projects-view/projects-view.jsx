@@ -15,7 +15,7 @@ export const ProjectsView = ({ project }) => {
               <Card.Text className="projectBlurb">{project.blurb}</Card.Text>
             </Card.Body>
 
-            <Card.Img variant="top" src={project.image} className="projectImage" style="width: 50%" />
+            <Card.Img variant="top" src={project.image} className="h-100 w-100 projectImage" style="width: 50%" />
 
             <Card.Body className="cardBody">
               <Card.Text className="justify-content-md-center">
