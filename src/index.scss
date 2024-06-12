@@ -1,14 +1,20 @@
-$primary: rgb(175, 225, 175);
-$secondary: rgba(143, 188, 143, 0.5);
-$navBar: rgba(143, 188, 143, 0.2);
+$primary: rgb(193, 175, 225);
+$secondary: rgba(193, 175, 225, 0.5);
+$navBar: rgba(195, 187, 211, 0.5);
 $body-bg: #f8f8ff;
 $primary-font: "Urbanist", sans-serif;
 
 @import '~bootstrap/scss/bootstrap.scss';
 
+body {
+  font-family: "Urbanist", sans-serif;
+}
+
+// Intro / Index page
 .introCard {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 2px;
+  margin-top: 7%;
   font-variant: all-small-caps;
   font-size: 18px;
 }
@@ -35,39 +41,17 @@ $primary-font: "Urbanist", sans-serif;
 
 .portrait {
   margin-left: 10%;
-  border-radius: 50%;
-  border: 1px dotted #50615a;
+  border-radius: 5%;
 }
 
-.aboutPortrait {
-  border-radius: 50% 50% 0% 0%;
-  height: 300px;
-  width: 290px;
-}
+// About page + Project cards
 
 .card {
-  color: #50615a;
-  padding: 25px 0px 50px 0px;
-  border-radius: 20px;
-  border: 1px solid #50615a;
-  margin-top: 40px;
-  box-shadow: 5px 5px 12px 2px #50615ab5;
+  border: none;
 }
 
-.aboutTitle {
-  font-family: $primary-font;
-  font-variant: all-small-caps;
-  text-align: center;
-  font-size: 40px;
-  margin-top: 30px;
-  margin-bottom: 25px;
-}
-
-.aboutText {
-  text-align: center;
-  color: #000000;
-  padding: 0px 30px;
-  font-family: 'Courier New', Courier, monospace;
+.cardTitle {
+  letter-spacing: 1px;
 }
 
 .cardTitle,
@@ -82,23 +66,66 @@ $primary-font: "Urbanist", sans-serif;
   text-align: center;
 }
 
-.projectImage {
-  height: 300px;
-  max-width: 500px;
-  border-radius: 10px;
-  padding: 2px;
+.centeredHover {
+  align-self: center;
 }
 
-.projectBlurb {
+.imageContainer {
+  transform: translate(-200px, -50px);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.project:hover .imageContainer {
+  transform: translate(10px, -50px);
+  padding-top: 0px;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.projectImageHide {
+  display: none;
+}
+
+.projectImage {
+  height: auto;
+  width: 0%;
+  border-radius: 10px;
+  padding: 2px;
+  transition: all 1s ease-in-out;
+}
+
+.project:hover .projectImage {
+  height: auto;
+  width: 500px;
+  transition: all 1s ease-in-out;
+}
+
+.projectBlurb,
+.featuredBlurb {
   text-align: center;
   font-style: italic;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.featuredBlurb {
+  padding-top: 25%;
 }
 
 .currentProject {
-  font-family: "Silkscreen", sans-serif;
   font-size: 40px;
-  text-shadow: 4px 4px 5px rgba(80, 97, 90, 0.5);
-  margin-top: 0px;
+}
+
+.featuredCard {
+  border-radius: 0px;
+  border: 1px solid #0000004d;
+  background-color: rgba(173, 182, 173, 0.05);
+}
+
+.featuredProject {
+  margin-top: 8%;
+  margin-bottom: 5%;
 }
 
 .primaryButton,
@@ -107,20 +134,20 @@ $primary-font: "Urbanist", sans-serif;
 }
 
 .primaryButton {
-  background-color: $navBar;
-  border: none;
+  background-color: $body-bg;
+  border: 1px solid #000;
   font-size: 15px;
   width: 100%;
   letter-spacing: 3px;
   font-variant: all-small-caps;
-  border-radius: 10px;
+  border-radius: 0px;
   transition: all 0.9s;
 }
 
 .primaryButton:hover {
   background-color: $body-bg;
   letter-spacing: 5px;
-  box-shadow: rgba(143, 188, 143, 0.5) 0px 0px 10px 2px;
+  box-shadow: rgba(193, 175, 225, 0.5) 0px 0px 10px 2px;
   transition: all 0.9s;
 }
 
@@ -144,17 +171,38 @@ $primary-font: "Urbanist", sans-serif;
   transition: all 0.9s;
 }
 
-.formLabel {
-  font-family: "Urbanist", sans-serif;
-  font-size: 18px;
+// Contact
+
+.contact {
+  margin: 7% 0% 1% 0%;
+}
+
+.formTitle {
+  margin: 7px 0px;
+  letter-spacing: 1px;
+  font-family: $primary-font;
+  font-size: 35px;
+  text-align: center;
   font-variant: all-small-caps;
 }
 
-.formInput {
-  padding-top: 7px;
+.contactForm {
   width: 100%;
-  font-style: italic;
-  font-size: 13px;
+  border: 1px solid $secondary;
+  border-left: 2.5px solid black;
+  background-color: rgba(176, 169, 190, 0.05);
+  border-radius: 0px;
+}
+
+.formLabel {
+  font-family: "Urbanist", sans-serif;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.519);
+  font-variant: all-small-caps;
+}
+
+.requiredForm {
+  color: red;
 }
 
 // Footer
@@ -162,8 +210,25 @@ $primary-font: "Urbanist", sans-serif;
 .footer {
   font-family: "Urbanist", sans-serif;
   font-variant: all-small-caps;
-  text-align: center;
-  min-width: 520px;
+  margin-top: 7%;
+}
+
+.footerIcon:hover {
+  box-shadow: 0px 0px 10px 3px $secondary;
+}
+
+.iconAttribute,
+.iconAttribute a {
+  color: #00000085;
+  text-decoration-color: #0000004d;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.iconAttribute a:hover {
+  color: $secondary;
+  text-decoration-color: $secondary;
 }
 
 // responsive
@@ -173,16 +238,6 @@ $primary-font: "Urbanist", sans-serif;
     margin-right: 50px;
   }
 
-  .navLinks {
-    margin-top: -30px;
-    margin-left: 13px;
-  }
-
-  .navBrand {
-    padding-top: 30px;
-    padding-left: 40px;
-  }
-
   .introText {
     padding-top: 50px;
     padding-bottom: 0px;
@@ -192,43 +247,51 @@ $primary-font: "Urbanist", sans-serif;
     padding: 50px 0px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px #50615a59;
     min-width: 520px;
   }
 
   .portrait {
-    margin-left: 12%;
     border-radius: 10px;
   }
 
-  .aboutPortrait {
-    margin-left: 23%;
-    height: 280px;
-    width: 280px;
+  .featuredProject {
+    margin-bottom: 10px;
   }
 
   .projectImage {
     max-width: 900px;
-    min-height: 500px;
+    min-height: auto;
+  }
+
+  .imageContainer {
+    transform: translate(1%, -50%);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  .project:hover .imageContainer {
+    transform: translate(1%, -15%);
+    opacity: 1;
+    transition: all 1s ease-in-out;
+  }
+
+  .featuredProjectImage {
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .featuredBlurb {
+    padding-top: 10%;
   }
 }
 
-@media all and (min-width: 768px) and (max-width: 991px) {
+@media all and (min-width: 767px) and (max-width: 991px) {
   .homeLink {
     margin-right: 50px;
   }
 
-  .navLinks {
-    margin-top: -30px;
-    margin-left: 15px;
-  }
-
   .navBrand {
     padding-top: 30px;
-  }
-
-  .navBar {
-    padding-right: 35px;
   }
 
   .introText {
@@ -240,35 +303,45 @@ $primary-font: "Urbanist", sans-serif;
     padding: 50px 0px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px #50615a59;
   }
 
   .portrait {
-    margin-left: 15%;
+    margin-left: 18%;
     border-radius: 10px;
   }
 
-  .aboutPortrait {
-    height: 280px;
-    width: 300px;
+  .featuredProject {
+    margin-bottom: 0px;
   }
 
   .projectImage {
     max-width: 900px;
-    min-height: 500px;
+    min-height: auto;
+  }
+
+  .imageContainer {
+    transform: translate(95px, -200px);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
+
+  .project:hover .imageContainer {
+    transform: translate(95px, -70px);
+    opacity: 1;
+    transition: all 1s ease-in-out;
   }
 
   .featuredProject {
     height: fit-content;
   }
 
-  .featuredTitle {
-    margin-top: 10px;
-  }
-
   .featuredProjectImage {
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
+  }
+
+  .featuredBlurb {
+    padding-top: 8%;
   }
 }
 
@@ -278,19 +351,15 @@ $primary-font: "Urbanist", sans-serif;
     margin-right: 50px;
   }
 
-  .navBar {
-    padding-right: 50px;
-  }
-
   .introText {
-    padding: 30px 5px 0px 110px;
+    padding: 10px 5px 0px 120px;
   }
 
   .card {
     padding: 50px 0px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px #50615a59;
+    box-shadow: none;
   }
 
   .portrait {
@@ -312,6 +381,7 @@ $primary-font: "Urbanist", sans-serif;
   .featuredProjectImage {
     border-radius: 10px;
     margin-top: 10px;
+    padding-bottom: 20px;
     height: 100%;
   }
 }
@@ -326,7 +396,8 @@ $primary-font: "Urbanist", sans-serif;
     padding: 50px 0px;
     border: none;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 0px #50615a59;
+    box-shadow: none;
+    // box-shadow: 0px 0px 15px 0px #50615a59;
   }
 
   .featuredProject {
