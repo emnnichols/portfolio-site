@@ -1,5 +1,4 @@
-
-import { Row, Col, Button, Card } from "react-bootstrap";
+import { Row, Col, Container, Card } from "react-bootstrap";
 import "./about-view.scss";
 import moment from "moment";
 import portrait from "../../../img/about_portrait.jpeg"
@@ -11,64 +10,68 @@ export const AboutView = () => {
   const duration = Math.round((moment(end).diff(start, 'months') / 12) * 10) / 10;
 
   return (
+    <Container className="about">
+      <Row className="justify-content-center">
+        <Col lg={7} className="col-12 aboutText">
+          My name is Emily and I'm from Henderson, Nevada!
+          I'm a Las Vegas native but I moved all over the US throughout my childhood before coming back to my home state in 2011.
+          I attended College of Southern Nevada and have an Associate's degree in General Studies and also a degree in Digital Forensics.
+          <br /><br />Currently, I am a student in the Full-Stack Web Development program at CareerFoundry while working as a Home Health Aide.
+        </Col>
 
-    <>
-      <Card className="card mt-5 mb-5">
-        <Row className="justify-content-md-center">
-          <Card.Title className="aboutTitle">
-            nice to meet you!
-          </Card.Title>
+        <Row className="mt-5 justify-content-center">
+          <Container className="horizontalTable">
+            <Row className="col-12 mt-5 justify-content-center">
+              <Col className="tableTitle col-3 tableLeft" style={{ borderRight: "2px solid #000" }}>
+                <Row className="cellBorder"><Col>language</Col></Row>
+                <Row className="cellBorder"><Col>expertise lvl</Col></Row>
+                <Row><Col>experience</Col></Row>
+              </Col>
+              <Col className="tableRight col-9 tableText">
+                <Row className="cellBorder">
+                  <Col lg={3} className="col-2">HTML</Col>
+                  <Col lg={3} className="col-2 skillBorder">CSS (+ SCSS)</Col>
+                  <Col lg={6} className="col-7 skillBorder">JS (+ REACT, REACT NATIVE, ANGULAR)</Col>
+                </Row>
+                <Row className="cellBorder">
+                  <Col lg={3} className="col-2">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                  <Col lg={3} className="col-2 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                  <Col lg={6} className="col-7 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                </Row>
+                <Row>
+                  <Col lg={3} className="col-2">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                  <Col lg={3} className="col-2 skillBorder">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                  <Col lg={6} className="col-7 skillBorder">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
 
-          <Card.Img variant="center" src={portrait} className="aboutPortrait" />
+          <Container className="mt-3 verticalTable">
+            <Col className="tableText">
+              <Row>
+                <Col lg={4} className="col-5 tableTitle">language</Col>
+                <Col lg={4} className="col-3 tableTitle skillBorder">expertise</Col>
+                <Col lg={4} className="col-4 tableTitle skillBorder">experience</Col>
+              </Row>
+              <Row className="cellBorder">
+                <Col lg={4} className="col-5">HTML</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+              </Row>
+              <Row className="cellBorder">
+                <Col lg={4} className="col-5">CSS (+ SCSS)</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+              </Row>
+              <Row>
+                <Col lg={4} className="col-5">JS (REACT/ REACT NATIVE /ANGULAR)</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+              </Row>
+            </Col></Container>
         </Row>
-        <Row className="mb-3">
-          <Card.Body>
-            <Card.Text className="aboutText">
-              My name is Emily and I'm from Henderson, Nevada! I'm a Las Vegas native but I moved all over the US throughout my childhood before coming back to my home state in 2011.
-              I attended College of Southern Nevada and have an Associate's degree in General Studies and also a degree in Digital Forensics.
-              <br /><br />Currently, I am a student in the Full-Stack Web Development program at CareerFoundry <br /> while working as a Home Health Aide.
-            </Card.Text>
-          </Card.Body>
-        </Row>
-
-        <Card.Body>
-          <Row className="justify-content-md-center">
-            <Col lg={3} className="col-3">
-              <Row><Card.Text className="tableTitle">skills</Card.Text></Row>
-              <Row>
-                <Card.Text className="skillText">
-                  HTML<br />
-                  CSS<br />
-                  JS
-                </Card.Text>
-              </Row>
-            </Col>
-
-            <Col lg={5} className="col-5" style={{ marginRight: "10px", marginLeft: "10px" }}>
-              <Row><Card.Text className="tableTitle">expertise</Card.Text></Row>
-              <Row>
-                <Card.Text className="skillText">
-                  Beginner<br />
-                  Beginner<br />
-                  Beginner
-                </Card.Text>
-              </Row>
-            </Col>
-
-            <Col lg={3} className="col-3">
-              <Row><Card.Text className="tableTitle">years</Card.Text></Row>
-              <Row>
-                <Card.Text className="skillText">
-                  {duration}<br />
-                  {duration}<br />
-                  {duration}
-                </Card.Text>
-              </Row>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-    </>
-
+      </Row >
+    </Container >
   )
 };

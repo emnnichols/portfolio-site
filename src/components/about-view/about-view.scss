@@ -1,40 +1,66 @@
-$primary: rgb(175, 225, 175);
-$secondary: rgba(143, 188, 143, 0.5);
-$navBar: rgba(143, 188, 143, 0.2);
+$primary: rgb(193, 175, 225);
+$secondary: rgba(193, 175, 225, 0.5);
+$navBar: rgba(195, 187, 211, 0.5);
 $body-bg: #f8f8ff;
 $primary-font: "Urbanist", sans-serif;
 
-// about page
 
-.tableTitle {
-  background-color: $navBar;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  font-variant: all-small-caps;
-  font-size: 27px;
-  margin-bottom: 20px;
-  border-radius: 20px 20px 0px 0px;
-  border-bottom: 1px dashed black;
+.about {
+  margin-top: 10%;
 }
 
-.skillText {
-  font-family: 'Courier New', Courier, monospace;
+.aboutText {
   text-align: center;
-  font-size: 20px;
-  letter-spacing: 2px;
-  font-variant: all-small-caps;
-  background-color: #b7c6b733;
   color: #000000;
-  padding-bottom: 5px;
-  border-radius: 0px 0px 10px 10px;
+  padding: 0px 30px;
+}
+
+// Skill table on about page
+
+.skillBorder {
+  border-left: 1px solid #00000080;
+}
+
+.cellBorder {
+  border-bottom: 1px dashed #00000080;
+}
+
+.tableTitle {
+  border-bottom: none;
+  background-color: #ced5ce33;
+}
+
+.tableTitle,
+.tableText {
+  padding: 3px 5px;
+  font-variant: all-small-caps;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #000000;
+  font-size: 20px;
+}
+
+.horizontalTable {
+  display: block;
+}
+
+.verticalTable {
+  display: none;
 }
 
 // RESPONSIVE
 
-@media all and (max-width: 770px) {
+@media all and (max-width: 1400px) {
 
-  .skillText,
+  .horizontalTable {
+    display: none;
+  }
+
   .tableTitle {
-    margin-left: 10px;
+    border-bottom: 1px solid #000;
+  }
+
+  .verticalTable {
+    display: block;
   }
 }
