@@ -10,39 +10,37 @@ export const FeaturedProject = ({ projects }) => {
 
   return (
     <>
-      <Col className="mb-4 featuredProject" key={`${project ? project.id : `featured`}_project_list`} sm={12}>
+      <Col className="featuredProject" key={`${project ? project.id : `featured`}_project_list`} sm={12}>
         {project
           ?
           <Card className="h-100 w-100" style={{ paddingTop: "0px" }}>
-            <Card.Body className="cardBody">
-              <Col sm={12}>
-                <Card.Title className="cardTitle" style={{ letterSpacing: "1px" }}>
-                  <div className="currentProject">CURRENT PROJECT</div>
-                </Card.Title></Col>
-              <Row>
-                <Col lg={6} md={12} sm={12}>
-                  <Card.Img variant="top" src={project.image} className="featuredProjectImage" />
-                </Col>
-                <Col lg={6} md={12} sm={12} ><Card.Text className="justify-content-md-center featuredInfo">
-                  <Card.Title className="cardTitle featuredTitle" style={{ letterSpacing: "1px" }}>
-                    {project.name}
-                  </Card.Title>
-
-                  <Card.Text className="projectBlurb">
-                    {project.blurb}
+            <Col sm={12}>
+              <Card.Title className="cardTitle" style={{ letterSpacing: "1px" }}>
+                <div className="currentProject">NEW | <span style={{ fontStyle: "italic" }}>{project.name}</span></div>
+              </Card.Title></Col>
+            <Col className="featuredCard">
+              <Card.Body className="cardBody">
+                <Row>
+                  <Col lg={7} md={12} sm={12}>
+                    <Card.Img variant="top" src={project.image} className="featuredProjectImage" />
+                  </Col>
+                  <Col lg={5} md={12} sm={12} ><Card.Text className="justify-content-md-center featuredInfo">
+                    <Card.Text className="featuredBlurb">
+                      {project.blurb}
+                    </Card.Text>
+                    <Link to={`/projects/${encodeURIComponent(project.name)}`}>
+                      <Button variant="primary" className="primaryButton mt-2">DETAILS</Button>
+                    </Link>
+                    <Link to={project.github} target="_blank">
+                      <Button variant="primary" className="primaryButton mt-2">GITHUB</Button>
+                    </Link>
                   </Card.Text>
-                  <Link to={`/projects/${encodeURIComponent(project.name)}`}>
-                    <Button variant="primary" className="primaryButton mt-2">DETAILS</Button>
-                  </Link>
-                  <Link to={project.github} target="_blank">
-                    <Button variant="primary" className="primaryButton mt-2">GITHUB</Button>
-                  </Link>
-                </Card.Text>
-                </Col></Row>
-            </Card.Body>
+                  </Col></Row>
+              </Card.Body>
+            </Col>
           </Card>
           : null}
-      </Col >
+      </Col>
 
       {
         projects.map((project) => {
