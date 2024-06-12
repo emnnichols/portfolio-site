@@ -1,6 +1,6 @@
-$primary: rgb(175, 225, 175);
-$secondary: rgba(143, 188, 143, 0.5);
-$navBar: rgba(143, 188, 143, 0.2);
+$primary: rgb(193, 175, 225);
+$secondary: rgba(193, 175, 225, 0.5);
+$navBar: rgba(195, 187, 211, 0.5);
 $body-bg: #f8f8ff;
 $primary-font: "Urbanist", sans-serif;
 
@@ -9,18 +9,13 @@ $primary-font: "Urbanist", sans-serif;
 .navBar {
   font-variant: all-small-caps;
   text-align: center;
-  padding-right: 70px;
-}
-
-.navBrand {
-  margin-top: -18px;
+  padding-top: 30px;
 }
 
 .navLinks,
 .navBrand {
   font-variant: all-small-caps;
   text-align: center;
-  margin-top: 30px;
 }
 
 .navTitle {
@@ -30,32 +25,22 @@ $primary-font: "Urbanist", sans-serif;
 }
 
 .navItem {
-  padding-right: 0px;
-  margin-top: 7px;
-  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  border: 1px solid #000;
+  padding: 0px 10px;
+  transition: all 0.4s;
 }
 
-.homeLink,
-.aboutLink,
-.projectLink,
-.contactLink {
-  font-family: "Silkscreen", sans-serif;
-  padding: 0px 10px 4px 10px;
-  font-size: 22px;
-  border-radius: 20px;
-  transition: all 0.5s;
+.navItem:hover {
+  box-shadow: 0px 0px 5px 2px $navBar;
+  border-color: $navBar;
+  letter-spacing: 1px;
+  padding: 0px 5px;
+  transition: all 0.4s;
 }
 
-.homeLink:hover,
-.aboutLink:hover,
-.projectLink:hover,
-.contactLink:hover {
-  border-radius: 10px;
-  transition: all 0.5s;
-  background-color: $navBar;
+.navItem a {
   cursor: crosshair;
-}
-
-.navList {
-  text-align: center;
+  padding: 2px;
 }

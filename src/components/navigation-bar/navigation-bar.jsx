@@ -7,41 +7,40 @@ export const NavigationBar = () => {
 
   return (
     <>
-      <Row className="navLinks">
-        <Col lg={6} className="col-12"><Navbar className="navBrand justify-content-md-center">
-          <Row>
+      <Row className="navBar">
+        <Col><Navbar className="justify-content-center">
+          <Row className="col-12">
             <Navbar.Brand as={Link} to="/">
               <span className="navTitle navBar"> &nbsp;&lt; &#160; emily nichols &#160; / &gt;&nbsp; </span>
             </Navbar.Brand></Row>
         </Navbar></Col>
 
-        <Col lg={6} className="col-12"><Navbar className="navLinks justify-content-md-center">
-          <Row>
-            <Nav className="h3">
-              <Col className="col-2 navItem">
-                <Nav.Link as={Link} to="/">
-                  <span className="homeLink">Home</span>
+
+
+        <Row lg={12} className="col-12"><Col>
+          <Navbar className="justify-content-center">
+            <Nav>
+              <Col className="col-4 navItem" style={{ marginRight: "10px" }}>
+                <Nav.Link as={Link} to="/about">
+                  About
                 </Nav.Link>
               </Col>
 
-              <Col className="col-3 navItem">
-                <Nav.Link as={Link} to="/about"><span className="aboutLink">About</span>
-                </Nav.Link>
-              </Col>
-
-              <Col className="col-3 navItem">
+              <Col className="col-4  navItem">
                 <Nav.Link as={Link} to="/projects">
-                  <span className="projectLink">Projects</span>
+                  Projects
                 </Nav.Link>
               </Col>
 
-              <Col className="col-3 navItem" style={{ paddingLeft: "20px" }}>
+              <Col className="col-4  navItem" style={{ marginLeft: "10px" }}>
                 <Nav.Link as={Link} to="/contact">
-                  <span className="contactLink">Contact</span>
+                  Contact
                 </Nav.Link>
               </Col>
-            </Nav></Row>
-        </Navbar ></Col>
+            </Nav>
+          </Navbar >
+        </Col>
+        </Row>
       </Row>
 
     </>
