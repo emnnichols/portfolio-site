@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Row, Col, Card } from "react-bootstrap";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
-import portrait from "../../../img/portfolio_portrait.jpeg";
+import portrait from "../../../img/portfolio_portrait.png";
 import { baseUrl } from "../constants";
 
 import { NavigationBar } from "../navigation-bar/navigation-bar";
@@ -53,11 +53,6 @@ export const MainView = () => {
                     <Card.Body>
                       <Row className="introCard">
                         <Col lg={4} md={12} className="col-12"><img src={portrait} width="340px" className="portrait" /></Col>
-                        {/* <Card.Title>My name is Emily Nichols.</Card.Title>
-                        <br />
-                        <Card.Subtitle>
-                          I'm a &#160;<span className="standout">&nbsp;&lt; web developer /&gt;&nbsp;</span>&#160; located in Las Vegas, Nevada.
-                        </Card.Subtitle> */}
                         <Col lg={8} md={12} className="col-12">
                           <Card.Text className="introText">
                             {`<!DOCTYPE introduction>`}<br />
