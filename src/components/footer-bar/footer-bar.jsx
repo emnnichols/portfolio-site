@@ -33,9 +33,7 @@ export const Footer = () => {
             </Nav></Row>
         </Navbar >
         </Col>
-
         <Col className="col-12"><Navbar className="iconAttribute justify-content-center">
-
           <a href="https://www.flaticon.com/free-icons/linkedin" target="_blank" title="linkedin icons">Linkedin</a>
           <span style={{ paddingRight: "5px" }}>,</span>
           <a href="https://www.flaticon.com/free-icons/github" target="_blank" title="github icons">Github</a>
@@ -43,6 +41,7 @@ export const Footer = () => {
           <a href="https://www.flaticon.com/free-icons/tweet" target="_blank" title="tweet icons" style={{ paddingRight: "5px" }}>X / Twitter</a> icons created by Freepik
 
         </Navbar></Col>
+
       </Row></>
   )
 };

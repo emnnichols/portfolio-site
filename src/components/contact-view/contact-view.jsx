@@ -1,11 +1,7 @@
-import { Row, Col, Button, Card, Form, FloatingLabel } from "react-bootstrap";
+import { Row, Col, Button, Card, Container, Form, FloatingLabel } from "react-bootstrap";
 import { useState } from "react";
 
 import { baseUrl } from "../constants";
-import "./contact-view.scss";
-
-import telephoneIcon from "../../../img/telephone_icon.svg";
-import emailIcon from "../../../img/email_icon.svg";
 
 export const ContactView = () => {
   const [email, setEmail] = useState("");
@@ -36,14 +32,14 @@ export const ContactView = () => {
   };
 
   return (
-    <Col className="contact">
+    <Container className="contact">
       <Row className="mb-5 justify-content-center">
         <Row className="justify-content-center">
           <Col xl={6} lg={8} className="col-12">
             <Button href="tel:+17578488210" className="primaryButton mt-2">
               <Row style={{ textAlign: "right", marginLeft: "15px" }}>
-                <Col className="col-4">call &nbsp;&nbsp; |</Col>
-                <Col style={{ textAlign: "left" }} className="col-6">
+                <Col className="contactButton col-4">call &nbsp; |</Col>
+                <Col style={{ textAlign: "left" }} className="col-7">
                   (757) 848 - 8210</Col></Row>
             </Button></Col>
         </Row>
@@ -51,7 +47,7 @@ export const ContactView = () => {
           <Col xl={6} lg={8} className="col-12">
             <Button href="mailto:emnnichols@outlook.com" className="primaryButton mt-2">
               <Row style={{ textAlign: "right", marginLeft: "15px" }}>
-                <Col className="col-4">email &nbsp;&nbsp; |</Col>
+                <Col className="contactButton col-4">email &nbsp; |</Col>
                 <Col style={{ textAlign: "left" }} className="col-6">emnnichols@outlook.com</Col>
               </Row>
             </Button>
@@ -120,6 +116,6 @@ export const ContactView = () => {
           </Col>
         </Row>
       </Row>
-    </Col >
+    </Container >
   )
 };

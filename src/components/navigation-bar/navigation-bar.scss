@@ -9,7 +9,7 @@ $primary-font: "Urbanist", sans-serif;
 .navBar {
   font-variant: all-small-caps;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .navLinks,
@@ -27,13 +27,13 @@ $primary-font: "Urbanist", sans-serif;
 .navItem {
   font-family: "Urbanist", sans-serif;
   font-size: 20px;
-  border: 1px solid #000;
+  border-top: 1px dotted rgb(176, 154, 214);
   padding: 0px 10px;
   transition: all 0.4s;
 }
 
 .navItem:hover {
-  box-shadow: 0px 0px 5px 2px $navBar;
+  box-shadow: 0px -3px 5px -3px $navBar;
   border-color: $navBar;
   letter-spacing: 1px;
   padding: 0px 5px;
