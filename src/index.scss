@@ -15,6 +15,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 2px;
   margin-top: 7%;
+  margin-bottom: 50px;
   font-variant: all-small-caps;
   font-size: 18px;
 }
@@ -45,6 +46,10 @@ body {
 }
 
 // About page + Project cards
+
+.about {
+  margin-bottom: 50px;
+}
 
 .card {
   border: none;
@@ -124,8 +129,17 @@ body {
 }
 
 .featuredProject {
-  margin-top: 8%;
+  margin-top: 4%;
   margin-bottom: 5%;
+}
+
+.horizontalInfo {
+  display: none;
+}
+
+.detailTitle {
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
 }
 
 .primaryButton,
@@ -133,15 +147,19 @@ body {
   cursor: crosshair;
 }
 
-.primaryButton {
-  background-color: $body-bg;
-  border: 1px solid #000;
+.primaryButton,
+.disabledButton {
   font-size: 15px;
   width: 100%;
   letter-spacing: 3px;
   font-variant: all-small-caps;
   border-radius: 0px;
   transition: all 0.9s;
+}
+
+.primaryButton {
+  border: 1px solid #000;
+  background-color: $body-bg;
 }
 
 .primaryButton:hover {
@@ -155,13 +173,8 @@ body {
   background-color: rgba(128, 128, 128, 0.1);
   padding-top: 7px;
   padding-bottom: 9px;
-  font-size: 15px;
   text-align: center;
   font-style: italic;
-  letter-spacing: 3px;
-  font-variant: all-small-caps;
-  border-radius: 10px;
-  transition: all 0.9s;
   cursor: not-allowed;
 }
 
@@ -174,7 +187,7 @@ body {
 // Contact
 
 .contact {
-  margin: 7% 0% 1% 0%;
+  margin: 7% 0% 6% 0%;
 }
 
 .formTitle {
@@ -208,9 +221,11 @@ body {
 // Footer
 
 .footer {
+  position: sticky;
+  bottom: 0px;
+  background-color: ghostwhite;
   font-family: "Urbanist", sans-serif;
   font-variant: all-small-caps;
-  margin-top: 7%;
 }
 
 .footerIcon:hover {
@@ -233,9 +248,14 @@ body {
 
 // responsive
 
-@media all and (max-width: 767px) {
-  .homeLink {
-    margin-right: 50px;
+@media all and (max-width: 991px) {
+  body {
+    min-width: 100%;
+  }
+
+  .navBar {
+    width: 100%;
+    margin-left: -2%;
   }
 
   .introText {
@@ -243,35 +263,53 @@ body {
     padding-bottom: 0px;
   }
 
+  .introCard {
+    width: 99%;
+    margin-left: 0%;
+    margin-top: 0px;
+  }
+
+  .portrait {
+    margin: 0% 13%;
+  }
+
+  .about {
+    margin-left: 0%;
+  }
+
   .card {
     padding: 50px 0px;
     border: none;
     border-radius: 10px;
-    min-width: 520px;
-  }
-
-  .portrait {
-    border-radius: 10px;
+    min-width: 350px;
   }
 
   .featuredProject {
+    margin-left: 0%;
     margin-bottom: 10px;
   }
 
+  .project {
+    margin-left: 0%;
+  }
+
   .projectImage {
-    max-width: 900px;
+    min-width: inherit;
+    max-width: 100%;
     min-height: auto;
   }
 
   .imageContainer {
-    transform: translate(1%, -50%);
+    transform: translate(0%, -30%);
     opacity: 0;
+    min-width: 100%;
     transition: all 1s ease-in-out;
   }
 
   .project:hover .imageContainer {
-    transform: translate(1%, -15%);
+    transform: translate(0%, -15%);
     opacity: 1;
+    min-width: 100%;
     transition: all 1s ease-in-out;
   }
 
@@ -283,113 +321,131 @@ body {
   .featuredBlurb {
     padding-top: 10%;
   }
+
+  .projectDetails {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 50px;
+  }
+
+  .verticalInfo {
+    display: none;
+  }
+
+  .horizontalInfo {
+    display: block;
+    margin-left: 4%;
+    width: 100%;
+  }
+
+  .detailTitle {
+    border-bottom: none;
+    text-align: right;
+    font-size: 20px;
+  }
+
+  .projectButtons {
+    width: 99%;
+    margin-left: 0%;
+    margin-bottom: 50px;
+  }
+
+  .contact {
+    min-width: 100%;
+    margin-left: 0%;
+    margin-bottom: 20px;
+  }
+
+  .contactButton {
+    min-width: 70%;
+    margin-left: -45%;
+  }
+
+  .footer {
+    min-width: 100%;
+    margin-left: 0%;
+  }
 }
 
-@media all and (min-width: 767px) and (max-width: 991px) {
-  .homeLink {
-    margin-right: 50px;
+@media all and (max-width: 370px) {
+  .portrait {
+    margin: 0% 5%;
   }
+}
 
-  .navBrand {
-    padding-top: 30px;
+@media all and (min-width: 463px) and (max-width: 486px) {
+  .portrait {
+    margin-left: 14%;
   }
+}
 
-  .introText {
-    padding-top: 50px;
-    padding-bottom: 0px;
+@media all and (min-width: 487px) and (max-width: 503px) {
+  .portrait {
+    margin-left: 15%;
   }
+}
 
-  .card {
-    padding: 50px 0px;
-    border: none;
-    border-radius: 10px;
+@media all and (min-width: 504px) and (max-width: 516px) {
+  .portrait {
+    margin-left: 17%;
   }
+}
 
+@media all and (min-width: 517px) and (max-width: 541px) {
+  .portrait {
+    margin-left: 16%;
+  }
+}
+
+@media all and (min-width: 541px) and (max-width: 562px) {
   .portrait {
     margin-left: 18%;
-    border-radius: 10px;
-  }
-
-  .featuredProject {
-    margin-bottom: 0px;
-  }
-
-  .projectImage {
-    max-width: 900px;
-    min-height: auto;
-  }
-
-  .imageContainer {
-    transform: translate(95px, -200px);
-    opacity: 0;
-    transition: all 1s ease-in-out;
-  }
-
-  .project:hover .imageContainer {
-    transform: translate(95px, -70px);
-    opacity: 1;
-    transition: all 1s ease-in-out;
-  }
-
-  .featuredProject {
-    height: fit-content;
-  }
-
-  .featuredProjectImage {
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-
-  .featuredBlurb {
-    padding-top: 8%;
   }
 }
 
-@media all and (min-width: 992px) and (max-width: 1197px) {
-
-  .homeLink {
-    margin-right: 50px;
-  }
-
-  .introText {
-    padding: 10px 5px 0px 120px;
-  }
-
-  .card {
-    padding: 50px 0px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: none;
-  }
-
+@media all and (min-width: 563px) and (max-width: 575px) {
   .portrait {
-    margin-left: 10%;
-  }
-
-  .featuredProject {
-    height: 400px;
-  }
-
-  .featuredInfo {
-    margin-right: 40px;
-  }
-
-  .featuredTitle {
-    margin-top: 90px;
-  }
-
-  .featuredProjectImage {
-    border-radius: 10px;
-    margin-top: 10px;
-    padding-bottom: 20px;
-    height: 100%;
+    margin-left: 19.5%;
   }
 }
 
-@media all and (min-width: 1198px) and (max-width: 1201px) {
+@media all and (min-width: 576px) and (max-width: 767px) {
+  .portrait {
+    margin-left: 17%;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .portrait {
+    margin-left: 26%;
+  }
+}
+
+//end of portrait responsiveness
+
+@media all and (min-width: 992px) and (max-width: 1201px) {
+  body {
+    min-width: 100%;
+  }
+
+  .navBar {
+    margin-left: 0%;
+  }
+
+  .navTitle {
+    margin-left: 0px;
+  }
+
+  .introCard {
+    margin-top: 0px;
+  }
 
   .introText {
-    padding: 25px 5px 0px 110px;
+    padding: 5px 5px 0px 115px;
+  }
+
+  .aboutText {
+    min-width: 80%;
   }
 
   .card {
@@ -415,67 +471,57 @@ body {
   .featuredProjectImage {
     border-radius: 10px;
     margin-top: 5px;
-    margin-left: 40px;
-    height: 410px;
-    width: 87%;
+    margin-left: 0px;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .projectDetails {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 50px;
   }
 }
 
-@media all and (min-width: 1202px) and (max-width: 1400px) {
-  .homeLink {
-    margin-right: 50px;
+@media all and (min-width: 1202px) {
+  body {
+    min-width: 100%;
+  }
+
+  .navBar {
+    margin-left: 0%;
+  }
+
+  .navTitle {
+    margin-left: 0px;
   }
 
   .introText {
     padding: 6% 0% 0% 20%;
   }
 
+  .aboutText {
+    width: 80%;
+  }
+
   .featuredProject {
     height: 550px;
   }
 
   .featuredInfo {
+    margin-top: 20px;
     margin-right: 10px;
   }
 
-  .featuredTitle {
-    margin-top: 90px;
-  }
-
   .featuredProjectImage {
     border-radius: 10px;
-    margin-top: 10px;
-    height: 450px;
+    margin-top: 30px;
+    min-height: auto;
     width: 100%;
   }
-}
 
-@media all and (min-width: 1400px) {
-  .homeLink {
-    margin-right: 50px;
-  }
-
-  .introText {
-    padding: 6% 0% 0% 10%;
-  }
-
-  .featuredProject {
-    height: 550px;
-  }
-
-  .featuredInfo {
-    margin-right: 50px;
-  }
-
-  .featuredTitle {
-    margin-top: 90px;
-  }
-
-  .featuredProjectImage {
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 45px;
-    height: 400px;
-    width: 90%;
+  .projectButtons {
+    width: 75%;
+    margin-left: 12%;
   }
 }
