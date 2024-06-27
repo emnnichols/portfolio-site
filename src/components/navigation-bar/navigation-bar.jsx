@@ -36,31 +36,6 @@ export const NavigationBar = () => {
           </Nav>
         </Navbar >
       </Col>
-
-      {/* <Row lg={12} className="col-12 navBar"><Col>
-        <Navbar className="justify-content-center">
-          <Nav>
-            <Col className="col-4 navItem" style={{ marginRight: "10px" }}>
-              <Nav.Link as={Link} to="/about">
-                About
-              </Nav.Link>
-            </Col>
-
-            <Col className="col-4  navItem">
-              <Nav.Link as={Link} to="/projects">
-                Projects
-              </Nav.Link>
-            </Col>
-
-            <Col className="col-4  navItem" style={{ marginLeft: "10px" }}>
-              <Nav.Link as={Link} to="/contact">
-                Contact
-              </Nav.Link>
-            </Col>
-          </Nav>
-        </Navbar >
-      </Col>
-      </Row> */}
     </Container>
   )
 };

@@ -37,18 +37,18 @@ export const ContactView = () => {
         <Row className="justify-content-center">
           <Col xl={6} lg={8} className="col-12">
             <Button href="tel:+17578488210" className="primaryButton mt-2">
-              <Row style={{ textAlign: "right", marginLeft: "15px" }}>
-                <Col className="contactButton col-4">call &nbsp; |</Col>
-                <Col style={{ textAlign: "left" }} className="col-7">
-                  (757) 848 - 8210</Col></Row>
+              <Row style={{ textAlign: "right", marginLeft: "5px" }}>
+                <Col className="contactType col-4">call</Col>
+                <Col style={{ textAlign: "left" }} className="col-7 contactInfo">
+                  | &nbsp; (757) 848 - 8210</Col></Row>
             </Button></Col>
         </Row>
         <Row className="justify-content-center">
           <Col xl={6} lg={8} className="col-12">
             <Button href="mailto:emnnichols@outlook.com" className="primaryButton mt-2">
-              <Row style={{ textAlign: "right", marginLeft: "15px" }}>
-                <Col className="contactButton col-4">email &nbsp; |</Col>
-                <Col style={{ textAlign: "left" }} className="col-6">emnnichols@outlook.com</Col>
+              <Row style={{ textAlign: "right", marginLeft: "5px" }}>
+                <Col className="contactType col-4">email</Col>
+                <Col style={{ textAlign: "left" }} className="col-7 contactInfo">| &nbsp; emnnichols@outlook.com</Col>
               </Row>
             </Button>
           </Col>

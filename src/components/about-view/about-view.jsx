@@ -5,9 +5,13 @@ import portrait from "../../../img/about_portrait.jpeg"
 
 export const AboutView = () => {
 
-  const start = new Date(2023, 10 - 1, 16);
-  const end = new Date();
-  const duration = Math.round((moment(end).diff(start, 'months') / 12) * 10) / 10;
+  function duration(start) {
+    const end = new Date();
+    return Math.round((moment(end).diff(start, 'months') / 12) * 10) / 10;
+  }
+
+  const coreSkills = new Date(2023, 10 - 1, 16);
+  const angular = new Date(2024, 5 - 1, 20);
 
   return (
     <Container className="about">
@@ -29,19 +33,59 @@ export const AboutView = () => {
               </Col>
               <Col className="tableRight col-9 tableText">
                 <Row className="cellBorder">
-                  <Col lg={3} className="col-2">HTML</Col>
+                  <Col lg={2} className="col-2">HTML</Col>
                   <Col lg={3} className="col-2 skillBorder">CSS (+ SCSS)</Col>
-                  <Col lg={6} className="col-7 skillBorder">JS (+ REACT, REACT NATIVE, ANGULAR)</Col>
+                  <Col lg={4} className="col-7 skillBorder">JS (+ REACT, REACT NATIVE)</Col>
+                  <Col lg={2} className="col-2 skillBorder">ANGULAR</Col>
                 </Row>
                 <Row className="cellBorder">
-                  <Col lg={3} className="col-2">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
-                  <Col lg={3} className="col-2 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
-                  <Col lg={6} className="col-7 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
+                  <Col lg={2} className="col-2">
+                    {duration(coreSkills) < 3
+                      ? `junior` : duration(coreSkills) < 7
+                        ? `mid`
+                        : `senior`}</Col>
+                  <Col lg={3} className="col-2 skillBorder">
+                    {duration(coreSkills) < 3
+                      ? `junior` : duration(coreSkills) < 7
+                        ? `mid`
+                        : `senior`}
+                  </Col>
+                  <Col lg={4} className="col-7 skillBorder">
+                    {duration(coreSkills) < 3
+                      ? `junior` : duration(coreSkills) < 7
+                        ? `mid`
+                        : `senior`}
+                  </Col>
+                  <Col lg={2} className="col-2 skillBorder">
+                    {duration(angular) < 3
+                      ? `junior` : duration(angular) < 7
+                        ? `mid`
+                        : `senior`}
+                  </Col>
                 </Row>
                 <Row>
-                  <Col lg={3} className="col-2">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
-                  <Col lg={3} className="col-2 skillBorder">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
-                  <Col lg={6} className="col-7 skillBorder">{duration < 1 ? `${duration * 10} months` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                  <Col lg={2} className="col-2">{duration(coreSkills) < 1
+                    ? `${duration(coreSkills) * 10} mos`
+                    : duration(coreSkills) === 1
+                      ? `${duration(coreSkills)} year`
+                      : `${duration(coreSkills)} years`}</Col>
+                  <Col lg={3} className="col-2 skillBorder">{duration(coreSkills) < 1
+                    ? `${duration(coreSkills) * 10} mos`
+                    : duration(coreSkills) === 1
+                      ? `${duration(coreSkills)} year`
+                      : `${duration(coreSkills)} years`}</Col>
+                  <Col lg={4} className="col-7 skillBorder">{duration(coreSkills) < 1
+                    ? `${duration(coreSkills) * 10} mos`
+                    : duration(coreSkills) === 1
+                      ? `${duration(coreSkills)} year`
+                      : `${duration(coreSkills)} years`}</Col>
+                  <Col lg={2} className="col-2 skillBorder">
+                    {duration(angular) < 1
+                      ? `${duration(angular) * 10} mos`
+                      : duration(angular) === 1
+                        ? `${duration(angular)} year`
+                        : `${duration(angular)} years`}
+                  </Col>
                 </Row>
               </Col>
             </Row>
@@ -56,18 +100,23 @@ export const AboutView = () => {
               </Row>
               <Row className="cellBorder">
                 <Col lg={4} className="col-5">HTML</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
               </Row>
               <Row className="cellBorder">
                 <Col lg={4} className="col-5">CSS (+ SCSS)</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
+              </Row>
+              <Row className="cellBorder">
+                <Col lg={4} className="col-5">JS (REACT/ REACT NATIVE)</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
               </Row>
               <Row>
-                <Col lg={4} className="col-5">JS (REACT/ REACT NATIVE /ANGULAR)</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration < 3 ? `junior` : duration < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration < 1 ? `${duration * 10} mos` : duration === 1 ? `${duration} year` : `${duration} years`}</Col>
+                <Col lg={4} className="col-5">ANGULAR</Col>
+                <Col lg={4} className="col-3 skillBorder">{duration(angular) < 3 ? `junior` : duration(angular) < 7 ? `mid` : `senior`}</Col>
+                <Col lg={4} className="col-4 skillBorder">{duration(angular) < 1 ? `${duration(angular) * 10} mos` : duration(angular) === 1 ? `${duration(angular)} year` : `${duration(angular)} years`}</Col>
               </Row>
             </Col></Container>
         </Row>

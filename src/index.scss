@@ -26,9 +26,9 @@ body {
 }
 
 .introText {
-  padding-left: 5%;
+  padding-left: 2%;
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
   color: #50615aae;
 
 }
@@ -41,8 +41,10 @@ body {
 }
 
 .portrait {
+  width: auto;
+  height: 340px;
   margin-left: 10%;
-  border-radius: 5%;
+  border-radius: 50px 10px 10px 50px;
 }
 
 // About page + Project cards
@@ -190,6 +192,10 @@ body {
   margin: 7% 0% 6% 0%;
 }
 
+.contactInfo {
+  margin-left: 0%;
+}
+
 .formTitle {
   margin: 7px 0px;
   letter-spacing: 1px;
@@ -223,6 +229,7 @@ body {
 .footer {
   position: sticky;
   bottom: 0px;
+  margin-left: -5px;
   background-color: ghostwhite;
   font-family: "Urbanist", sans-serif;
   font-variant: all-small-caps;
@@ -234,6 +241,9 @@ body {
 
 .iconAttribute,
 .iconAttribute a {
+  margin-top: -15px;
+  padding-bottom: 5px;
+  text-align: center;
   color: #00000085;
   text-decoration-color: #0000004d;
   text-decoration-style: dotted;
@@ -247,6 +257,17 @@ body {
 }
 
 // responsive
+
+@media all and (max-width: 535px) {
+  .contactInfo {
+    display: none;
+  }
+
+  .contactType {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 @media all and (max-width: 991px) {
   body {
@@ -271,6 +292,7 @@ body {
 
   .portrait {
     margin: 0% 13%;
+    border-radius: 50px 50px 10px 10px;
   }
 
   .about {
@@ -356,72 +378,10 @@ body {
     margin-bottom: 20px;
   }
 
-  .contactButton {
-    min-width: 70%;
-    margin-left: -45%;
-  }
-
-  .footer {
-    min-width: 100%;
+  .contactInfo {
     margin-left: 0%;
   }
 }
-
-@media all and (max-width: 370px) {
-  .portrait {
-    margin: 0% 5%;
-  }
-}
-
-@media all and (min-width: 463px) and (max-width: 486px) {
-  .portrait {
-    margin-left: 14%;
-  }
-}
-
-@media all and (min-width: 487px) and (max-width: 503px) {
-  .portrait {
-    margin-left: 15%;
-  }
-}
-
-@media all and (min-width: 504px) and (max-width: 516px) {
-  .portrait {
-    margin-left: 17%;
-  }
-}
-
-@media all and (min-width: 517px) and (max-width: 541px) {
-  .portrait {
-    margin-left: 16%;
-  }
-}
-
-@media all and (min-width: 541px) and (max-width: 562px) {
-  .portrait {
-    margin-left: 18%;
-  }
-}
-
-@media all and (min-width: 563px) and (max-width: 575px) {
-  .portrait {
-    margin-left: 19.5%;
-  }
-}
-
-@media all and (min-width: 576px) and (max-width: 767px) {
-  .portrait {
-    margin-left: 17%;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 991px) {
-  .portrait {
-    margin-left: 26%;
-  }
-}
-
-//end of portrait responsiveness
 
 @media all and (min-width: 992px) and (max-width: 1201px) {
   body {
@@ -441,7 +401,8 @@ body {
   }
 
   .introText {
-    padding: 5px 5px 0px 115px;
+    min-width: 400px;
+    padding: 5px 5px 0px 15px;
   }
 
   .aboutText {
@@ -497,7 +458,8 @@ body {
   }
 
   .introText {
-    padding: 6% 0% 0% 20%;
+    min-width: 600px;
+    padding: 30px 0px 0px 10px;
   }
 
   .aboutText {

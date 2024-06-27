@@ -48,27 +48,27 @@ export const MainView = () => {
           <Route
             path="/"
             element={
-              <Col md={10} className="introCard card">
-                <Row>
-                  <Col lg={4} md={12} className="col-12 justify-content-center">
-                    <img src={portrait} width="340px" className="portrait" />
-                  </Col>
-                  <Col lg={8} md={12} className="col-12">
-                    <Card.Text className="introText">
-                      {`<!DOCTYPE introduction>`}<br />
-                      &#160;&#160;
-                      {`<Name`}<br />
-                      &#160;&#160;&#160;&#160;first="<span className="standout">Emily</span>"<br />
-                      &#160;&#160;&#160;&#160;last="<span className="standout">Nichols</span>"&gt;&nbsp;<br />
-                      &#160;&#160;{`</Name>`}
-                      <br />
-                      &#160;&#160;{`<intro>`}<br />
-                      <span className="homeIntro standout">I'm a web developer located in Las Vegas, Nevada.<br />
-                        I have an Associate's in Digital Forensics and am currently going through the Career Foundry Full-Stack Development bootcamp.</span><br />
-                      &#160;&#160;{`</intro>`}<br />
-                    </Card.Text></Col>
-                </Row>
-              </Col>
+              <Container>
+                <Col md={10} className="introCard card">
+                  <Row className="justify-content-center">
+                    <img src={portrait} className="portrait" />
+                    <Col lg={4} sm={10} className="col-12">
+                      <Card.Text className="introText">
+                        {`<!DOCTYPE introduction>`}<br />
+                        &#160;&#160;
+                        {`<Name`}<br />
+                        &#160;&#160;&#160;&#160;first="<span className="standout">Emily</span>"<br />
+                        &#160;&#160;&#160;&#160;last="<span className="standout">Nichols</span>"&gt;&nbsp;<br />
+                        &#160;&#160;{`</Name>`}
+                        <br />
+                        &#160;&#160;{`<intro>`}<br />
+                        <span className="homeIntro standout">I'm a web developer located in Las Vegas, Nevada.<br />
+                          I have an Associate's in Digital Forensics and am currently going through the Career Foundry Full-Stack Development bootcamp.</span><br />
+                        &#160;&#160;{`</intro>`}<br />
+                      </Card.Text></Col>
+                  </Row>
+                </Col>
+              </Container>
             }
           />
           <Route
