@@ -66,12 +66,12 @@ export const ContactView = () => {
                   <FloatingLabel
                     controlId="floatingInput"
                     className="formLabel"
-                    label="* email@example.com">
+                    label="* email">
                     <Form.Control
                       className="contactForm"
                       aria-label="Your email address"
                       type="text"
-                      placeholder="email@email.com"
+                      placeholder="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)} required />
                   </FloatingLabel>

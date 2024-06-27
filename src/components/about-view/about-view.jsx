@@ -28,7 +28,7 @@ export const AboutView = () => {
             <Row className="col-12 mt-5 justify-content-center">
               <Col className="tableTitle col-3 tableLeft" style={{ borderRight: "2px solid #000" }}>
                 <Row className="cellBorder"><Col>language</Col></Row>
-                <Row className="cellBorder"><Col>expertise lvl</Col></Row>
+                <Row className="cellBorder"><Col>expertise</Col></Row>
                 <Row><Col>experience</Col></Row>
               </Col>
               <Col className="tableRight col-9 tableText">
@@ -95,7 +95,7 @@ export const AboutView = () => {
             <Col className="tableText">
               <Row>
                 <Col lg={4} className="col-5 tableTitle">language</Col>
-                <Col lg={4} className="col-3 tableTitle skillBorder">expertise</Col>
+                <Col lg={4} className="col-3 tableTitle skillBorder">exp</Col>
                 <Col lg={4} className="col-4 tableTitle skillBorder">experience</Col>
               </Row>
               <Row className="cellBorder">

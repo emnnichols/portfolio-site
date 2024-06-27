@@ -33,12 +33,12 @@ export const Footer = () => {
         </Navbar>
         <Col className="col-12 iconAttribute justify-content-center">
           <a href="https://www.flaticon.com/free-icons/linkedin" target="_blank" title="linkedin icons">
-            Linkedin</a><span style={{ paddingRight: "5px" }}>,</span>
+            Linkedin</a><span style={{ marginRight: "5px" }}>,</span>
           <a href="https://www.flaticon.com/free-icons/github" target="_blank" title="github icons">
-            Github</a><span style={{ paddingRight: "5px" }}>,</span>
+            Github</a><span style={{ marginRight: "5px" }}>,</span>
           <a href="https://www.flaticon.com/free-icons/tweet" target="_blank" title="tweet icons">
             TWITTER</a>
-          <span style={{ paddingLeft: "10px" }}>icons created by Freepik</span>
+          <span style={{ marginLeft: "10px" }}>icons created by Freepik</span>
         </Col>
       </Col>
     </Container>
