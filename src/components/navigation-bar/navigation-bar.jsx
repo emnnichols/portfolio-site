@@ -1,4 +1,4 @@
-import { Row, Col, Container, Nav, Navbar, Card } from "react-bootstrap";
+import { Row, Col, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./navigation-bar.scss";
@@ -7,36 +7,60 @@ import logo from "../../../img/navlogo.png";
 export const NavigationBar = () => {
 
   return (
-    <Container className="card col-12" style={{ padding: "20px" }}>
-      <Row className="navBar">
-        <Col className="col-12" style={{ padding: "0px" }}>
-          <Navbar.Brand as={Link} to="/" className="navTitle">
-            <img src={logo} width="400px" />
+    <Container className="navBar">
+      <Col className="col-12">
+        <Navbar className="justify-content-center">
+          <Navbar.Brand as={Link} to="/">
+            <span className="navTitle navBar" style={{ marginLeft: "40px" }}><img src={logo} width="400px" /></span>
           </Navbar.Brand>
-        </Col>
-        <Col className="col-12">
-          <Navbar className="card" style={{ padding: "20px 0px 0px 0px" }}>
-            <Row>
-              <Col className="navItem">
-                <Nav.Link as={Link} to="/about">
-                  About
-                </Nav.Link>
-              </Col>
+        </Navbar>
+        <Navbar className="justify-content-center">
+          <Nav>
+            <Col className="col-4 navItem" style={{ marginRight: "10px" }}>
+              <Nav.Link as={Link} to="/about">
+                About
+              </Nav.Link>
+            </Col>
 
-              <Col className="navItem" style={{ width: "200px", marginRight: "10px", marginLeft: "10px" }}>
-                <Nav.Link as={Link} to="/projects">
-                  Projects
-                </Nav.Link>
-              </Col>
+            <Col className="col-4  navItem">
+              <Nav.Link as={Link} to="/projects">
+                Projects
+              </Nav.Link>
+            </Col>
 
-              <Col className="navItem">
-                <Nav.Link as={Link} to="/contact">
-                  Contact
-                </Nav.Link>
-              </Col></Row>
-          </Navbar>
-        </Col>
-      </Row>
-    </Container >
+            <Col className="col-4  navItem" style={{ marginLeft: "10px" }}>
+              <Nav.Link as={Link} to="/contact">
+                Contact
+              </Nav.Link>
+            </Col>
+          </Nav>
+        </Navbar >
+      </Col>
+
+      {/* <Row lg={12} className="col-12 navBar"><Col>
+        <Navbar className="justify-content-center">
+          <Nav>
+            <Col className="col-4 navItem" style={{ marginRight: "10px" }}>
+              <Nav.Link as={Link} to="/about">
+                About
+              </Nav.Link>
+            </Col>
+
+            <Col className="col-4  navItem">
+              <Nav.Link as={Link} to="/projects">
+                Projects
+              </Nav.Link>
+            </Col>
+
+            <Col className="col-4  navItem" style={{ marginLeft: "10px" }}>
+              <Nav.Link as={Link} to="/contact">
+                Contact
+              </Nav.Link>
+            </Col>
+          </Nav>
+        </Navbar >
+      </Col>
+      </Row> */}
+    </Container>
   )
 };
