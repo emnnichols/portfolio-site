@@ -6,7 +6,10 @@ $primary-font: "Urbanist", sans-serif;
 
 
 .about {
-  margin-top: 10%;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  margin-top: 5%;
 }
 
 .aboutText {
@@ -40,12 +43,14 @@ $primary-font: "Urbanist", sans-serif;
   font-size: 20px;
 }
 
-.horizontalTable {
-  display: block;
-}
-
 .verticalTable {
   display: none;
+}
+
+.horizontalTable {
+  display: block;
+  margin-left: 4%;
+  width: 100%;
 }
 
 // RESPONSIVE
@@ -56,11 +61,13 @@ $primary-font: "Urbanist", sans-serif;
     display: none;
   }
 
-  .tableTitle {
-    border-bottom: 1px solid #000;
-  }
-
   .verticalTable {
     display: block;
+    margin-left: 4%;
+    width: 100%;
+  }
+
+  .tableTitle {
+    border-bottom: 1px solid #000;
   }
 }
