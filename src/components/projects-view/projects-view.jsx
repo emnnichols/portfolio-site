@@ -11,7 +11,7 @@ export const ProjectsView = ({ project }) => {
     <>
       {!project.featured
         ?
-        <Row onMouseEnter={toggleHover} onMouseLeave={toggleHover} onTouchStart={toggleHover} onTouchEnd={toggleHover} className="col-12 justify-content-center project">
+        <Row onMouseEnter={toggleHover} onMouseLeave={toggleHover} onTouchStartCapture={toggleHover} onTouchEndCapture={toggleHover} className="col-12 justify-content-center project">
           <Col lg={hovered ? 6 : 7} className={hovered ? 'col-10 centeredHover mb-5' : 'col-10 mb-5'} key={`${project.id}_project_list`}>
             <Row>
               <Card.Title className="cardTitle">
