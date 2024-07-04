@@ -1,6 +1,9 @@
-$primary: rgb(193, 175, 225);
-$secondary: rgba(193, 175, 225, 0.5);
-$navBar: rgba(195, 187, 211, 0.5);
+// $primary: rgb(193, 175, 225);
+// $secondary: rgba(193, 175, 225, 0.5);
+// $navBar: rgba(195, 187, 211, 0.5);
+$primary: #a69eb0;
+$secondary: #c8c2cd;
+$navBar: #dadae3;
 $body-bg: #f8f8ff;
 $primary-font: "Urbanist", sans-serif;
 
@@ -167,7 +170,7 @@ body {
 .primaryButton:hover {
   background-color: $body-bg;
   letter-spacing: 5px;
-  box-shadow: rgba(193, 175, 225, 0.5) 0px 0px 10px 2px;
+  box-shadow: $secondary 0px 0px 10px 2px;
   transition: all 0.9s;
 }
 
@@ -192,8 +195,12 @@ body {
   margin: 7% 0% 6% 0%;
 }
 
+.contactButton a:hover {
+  margin-left: -10px;
+}
+
 .contactInfo {
-  margin-left: 0%;
+  margin-left: -2%;
 }
 
 .formTitle {

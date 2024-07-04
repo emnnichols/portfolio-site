@@ -1,6 +1,9 @@
-$primary: rgb(193, 175, 225);
-$secondary: rgba(193, 175, 225, 0.5);
-$navBar: rgba(195, 187, 211, 0.5);
+// $primary: rgb(193, 175, 225);
+// $secondary: rgba(193, 175, 225, 0.5);
+// $navBar: rgba(195, 187, 211, 0.5);
+$primary: #a69eb0;
+$secondary: #c8c2cd;
+$navBar: #dadae3;
 $body-bg: #f8f8ff;
 $primary-font: "Urbanist", sans-serif;
 
@@ -40,27 +43,19 @@ $primary-font: "Urbanist", sans-serif;
   font-size: 20px;
 }
 
-.horizontalTable {
-  display: block;
+.durationHover {
+  display: none;
 }
 
-.verticalTable {
-  display: none;
+.skillBarChart:hover .durationHover {
+  display: block;
 }
 
 // RESPONSIVE
 
 @media all and (max-width: 1400px) {
 
-  .horizontalTable {
-    display: none;
-  }
-
   .tableTitle {
     border-bottom: 1px solid #000;
-  }
-
-  .verticalTable {
-    display: block;
   }
 }
