@@ -1,7 +1,7 @@
-import { Row, Col, Container, Card } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import "./about-view.scss";
 import moment from "moment";
-import portrait from "../../../img/about_portrait.jpeg"
+import { BarChart, Bar, XAxis, YAxis, LabelList } from 'recharts';
 
 export const AboutView = () => {
 
@@ -10,8 +10,42 @@ export const AboutView = () => {
     return Math.round((moment(end).diff(start, 'months') / 12) * 10) / 10;
   }
 
-  const coreSkills = new Date(2023, 10 - 1, 16);
-  const angular = new Date(2024, 5 - 1, 20);
+  const coreSkills = duration(new Date(2023, 10 - 1, 16));
+  const reactNative = duration(new Date(2024, 5 - 1, 1));
+  const angular = duration(new Date(2024, 5 - 1, 20));
+
+  const data = [
+    {
+      name: "HTML",
+      length: ` ${coreSkills < 1 ? `${coreSkills * 10} mos` : `${coreSkills} yrs`}`,
+      duration: (coreSkills * 10),
+      fill: '#b5bfb0'
+    },
+    {
+      name: "CSS + Sass",
+      length: ` ${coreSkills < 1 ? `${coreSkills * 10} mos` : `${coreSkills} yrs`}`,
+      duration: (coreSkills * 10),
+      fill: '#dec2cb'
+    },
+    {
+      name: "JS + React",
+      length: ` ${coreSkills < 1 ? `${coreSkills * 10} mos` : `${coreSkills} yrs`}`,
+      duration: (coreSkills * 10),
+      fill: '#a69eb0'
+    },
+    {
+      name: "React Native",
+      length: `${reactNative < 1 ? `${reactNative * 10} mos` : `${reactNative} yrs`}`,
+      duration: (reactNative * 10),
+      fill: '#abb1cf'
+    },
+    {
+      name: "Angular",
+      length: `${angular < 1 ? `${angular * 10} mos` : `${angular} yrs`}`,
+      duration: (angular * 10),
+      fill: '#e35d6a'
+    },
+  ];
 
   return (
     <Container className="about">
@@ -22,103 +56,23 @@ export const AboutView = () => {
           I attended College of Southern Nevada and have an Associate's degree in General Studies and also a degree in Digital Forensics.
           <br /><br />Currently, I am a student in the Full-Stack Web Development program at CareerFoundry while working as a Home Health Aide.
         </Col>
-
-        <Row className="mt-5 justify-content-center">
-          <Container className="horizontalTable">
-            <Row className="col-12 mt-5 justify-content-center">
-              <Col className="tableTitle col-3 tableLeft" style={{ borderRight: "2px solid #000" }}>
-                <Row className="cellBorder"><Col>language</Col></Row>
-                <Row className="cellBorder"><Col>expertise</Col></Row>
-                <Row><Col>experience</Col></Row>
-              </Col>
-              <Col className="tableRight col-9 tableText">
-                <Row className="cellBorder">
-                  <Col lg={2} className="col-2">HTML</Col>
-                  <Col lg={3} className="col-2 skillBorder">CSS (+ SCSS)</Col>
-                  <Col lg={4} className="col-7 skillBorder">JS (+ REACT, REACT NATIVE)</Col>
-                  <Col lg={2} className="col-2 skillBorder">ANGULAR</Col>
-                </Row>
-                <Row className="cellBorder">
-                  <Col lg={2} className="col-2">
-                    {duration(coreSkills) < 3
-                      ? `junior` : duration(coreSkills) < 7
-                        ? `mid`
-                        : `senior`}</Col>
-                  <Col lg={3} className="col-2 skillBorder">
-                    {duration(coreSkills) < 3
-                      ? `junior` : duration(coreSkills) < 7
-                        ? `mid`
-                        : `senior`}
-                  </Col>
-                  <Col lg={4} className="col-7 skillBorder">
-                    {duration(coreSkills) < 3
-                      ? `junior` : duration(coreSkills) < 7
-                        ? `mid`
-                        : `senior`}
-                  </Col>
-                  <Col lg={2} className="col-2 skillBorder">
-                    {duration(angular) < 3
-                      ? `junior` : duration(angular) < 7
-                        ? `mid`
-                        : `senior`}
-                  </Col>
-                </Row>
-                <Row>
-                  <Col lg={2} className="col-2">{duration(coreSkills) < 1
-                    ? `${duration(coreSkills) * 10} mos`
-                    : duration(coreSkills) === 1
-                      ? `${duration(coreSkills)} year`
-                      : `${duration(coreSkills)} years`}</Col>
-                  <Col lg={3} className="col-2 skillBorder">{duration(coreSkills) < 1
-                    ? `${duration(coreSkills) * 10} mos`
-                    : duration(coreSkills) === 1
-                      ? `${duration(coreSkills)} year`
-                      : `${duration(coreSkills)} years`}</Col>
-                  <Col lg={4} className="col-7 skillBorder">{duration(coreSkills) < 1
-                    ? `${duration(coreSkills) * 10} mos`
-                    : duration(coreSkills) === 1
-                      ? `${duration(coreSkills)} year`
-                      : `${duration(coreSkills)} years`}</Col>
-                  <Col lg={2} className="col-2 skillBorder">
-                    {duration(angular) < 1
-                      ? `${duration(angular) * 10} mos`
-                      : duration(angular) === 1
-                        ? `${duration(angular)} year`
-                        : `${duration(angular)} years`}
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-
-          <Container className="mt-3 verticalTable">
-            <Col className="tableText">
-              <Row>
-                <Col lg={4} className="col-5 tableTitle">language</Col>
-                <Col lg={4} className="col-3 tableTitle skillBorder">exp</Col>
-                <Col lg={4} className="col-4 tableTitle skillBorder">experience</Col>
-              </Row>
-              <Row className="cellBorder">
-                <Col lg={4} className="col-5">HTML</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
-              </Row>
-              <Row className="cellBorder">
-                <Col lg={4} className="col-5">CSS (+ SCSS)</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
-              </Row>
-              <Row className="cellBorder">
-                <Col lg={4} className="col-5">JS (REACT/ REACT NATIVE)</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration(coreSkills) < 3 ? `junior` : duration(coreSkills) < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration(coreSkills) < 1 ? `${duration(coreSkills) * 10} mos` : duration(coreSkills) === 1 ? `${duration(coreSkills)} year` : `${duration(coreSkills)} years`}</Col>
-              </Row>
-              <Row>
-                <Col lg={4} className="col-5">ANGULAR</Col>
-                <Col lg={4} className="col-3 skillBorder">{duration(angular) < 3 ? `junior` : duration(angular) < 7 ? `mid` : `senior`}</Col>
-                <Col lg={4} className="col-4 skillBorder">{duration(angular) < 1 ? `${duration(angular) * 10} mos` : duration(angular) === 1 ? `${duration(angular)} year` : `${duration(angular)} years`}</Col>
-              </Row>
-            </Col></Container>
+        <Row className="skillBarChart justify-content-center">
+          <BarChart
+            layout="vertical"
+            width={600}
+            height={230}
+            margin={{ top: 20, bottom: 20, left: 5, right: 5 }}
+            data={data}>
+            <XAxis type="number" label={{ value: "experience (months)", offset: -15, position: 'insideBottom' }} />
+            <YAxis dataKey="name" type="category" width={100} padding={{ bottom: 8 }} />
+            <Bar
+              barSize={13}
+              background={{ fill: "rgba(200, 194, 205, 0.2)" }}
+              dataKey="duration"
+            >
+              <LabelList dataKey="length" fill="#000" angle={0} offset={10} width={100} position="right" className="durationHover" />
+            </Bar>
+          </BarChart>
         </Row>
       </Row >
     </Container >
