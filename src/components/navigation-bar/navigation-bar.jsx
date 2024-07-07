@@ -10,8 +10,7 @@ export const NavigationBar = () => {
     <Container className="navBar">
       <Col className="col-12">
         <Navbar className="justify-content-center mobileNav">
-
-          <Navbar.Brand as={Link} to="/" style={{ marginLeft: 50 }}>
+          <Navbar.Brand as={Link} to="/" style={{ marginLeft: 40 }}>
             <span className="navTitle navBar">
               Emily Nichols
             </span></Navbar.Brand>

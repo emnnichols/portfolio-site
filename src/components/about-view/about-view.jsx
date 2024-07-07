@@ -21,8 +21,8 @@ export const AboutView = () => {
         let alink = document.createElement("a");
         alink.href = fileURL;
         alink.target = "_blank";
+        alink.download = "Emily_Nichols_Resume.pdf"
         alink.click();
-        alink.ontouchstart;
       });
     });
   }
