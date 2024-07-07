@@ -37,25 +37,24 @@ export const ContactView = () => {
         <Row className="justify-content-center">
           <Col xl={6} lg={8} className="col-12">
             <Button href="tel:+17578488210" className="primaryButton mt-2">
-              <Row style={{ textAlign: "right", marginLeft: "5px" }}>
-                <Col className="contactType col-4">call</Col>
-                <Col style={{ textAlign: "left" }} className="col-7 contactInfo">
+              <Row style={{ textAlign: "right", marginLeft: "15px" }}>
+                <Col className="contactType col-3">call</Col>
+                <Col style={{ textAlign: "left" }} className="col-8 contactInfo">
                   | &nbsp; (757) 848 - 8210</Col></Row>
             </Button></Col>
         </Row>
         <Row className="justify-content-center">
           <Col xl={6} lg={8} className="col-12">
             <Button href="mailto:emnnichols@outlook.com" className="primaryButton mt-2">
-              <Row style={{ textAlign: "right", marginLeft: "5px" }}>
-                <Col className="contactType contactButton col-4">email</Col>
-                <Col style={{ textAlign: "left" }} className="col-7 contactInfo">| &nbsp; emnnichols@outlook.com</Col>
+              <Row style={{ textAlign: "right", marginLeft: "15px" }}>
+                <Col className="contactType col-3">email</Col>
+                <Col style={{ textAlign: "left" }} className="col-8 contactInfo">| &nbsp; emnnichols@outlook.com</Col>
               </Row>
             </Button>
           </Col>
         </Row>
       </Row >
       <Row>
-        <Card.Title className="mb-3 formTitle">OR ... SEND a MESSAGE</Card.Title>
       </Row>
       <Row className="justify-content-center">
         <Row className="mt-2 justify-content-center">

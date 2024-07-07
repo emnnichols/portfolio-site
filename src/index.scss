@@ -165,6 +165,7 @@ body {
 .primaryButton {
   border: 1px solid #000;
   background-color: $body-bg;
+  box-shadow: rgb(200, 194, 205) 2px 2px 4px 0px;
 }
 
 .primaryButton:hover {
@@ -193,10 +194,6 @@ body {
 
 .contact {
   margin: 7% 0% 6% 0%;
-}
-
-.contactButton a:hover {
-  margin-left: -10px;
 }
 
 .contactInfo {

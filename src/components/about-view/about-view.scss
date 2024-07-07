@@ -43,12 +43,15 @@ $primary-font: "Urbanist", sans-serif;
   font-size: 20px;
 }
 
-.durationHover {
-  display: none;
+.downloadIcon {
+  width: 20px;
+  margin: 0px 10px 0px -5px;
 }
 
-.skillBarChart:hover .durationHover {
-  display: block;
+.skill {
+  font-variant: all-small-caps;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
 // RESPONSIVE

@@ -1,7 +1,9 @@
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import "./about-view.scss";
 import moment from "moment";
 import { BarChart, Bar, XAxis, YAxis, LabelList } from 'recharts';
+
+import download from "../../../img/download.png";
 
 export const AboutView = () => {
 
@@ -56,21 +58,30 @@ export const AboutView = () => {
           I attended College of Southern Nevada and have an Associate's degree in General Studies and also a degree in Digital Forensics.
           <br /><br />Currently, I am a student in the Full-Stack Web Development program at CareerFoundry while working as a Home Health Aide.
         </Col>
-        <Row className="skillBarChart justify-content-center">
+        <Row className="justify-content-center mt-4">
+          <Col xl={6} lg={8} className="col-12">
+            <Button href="../../../files/2024-Resume.pdf" className="primaryButton mt-2" target="_blank" download>
+              <Row>
+                <Col className="col-12">
+                  <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />resume</Col></Row>
+            </Button></Col>
+        </Row>
+        <Row className="skillBarChart mt-4 justify-content-center">
           <BarChart
             layout="vertical"
-            width={600}
-            height={230}
-            margin={{ top: 20, bottom: 20, left: 5, right: 5 }}
+            width={900}
+            height={200}
+            margin={{ top: 10, bottom: 50, left: 110, right: 70 }}
             data={data}>
-            <XAxis type="number" label={{ value: "experience (months)", offset: -15, position: 'insideBottom' }} />
-            <YAxis dataKey="name" type="category" width={100} padding={{ bottom: 8 }} />
+            <XAxis type="number" label={{ value: "experience (months)", position: 'insideBottom' }} hide />
+            <YAxis dataKey="name" type="category" hide />
             <Bar
-              barSize={13}
+              barSize={18}
               background={{ fill: "rgba(200, 194, 205, 0.2)" }}
               dataKey="duration"
             >
-              <LabelList dataKey="length" fill="#000" angle={0} offset={10} width={100} position="right" className="durationHover" />
+              <LabelList dataKey="length" fill="#c3c3d1" angle={0} offset={10} width={200} position="right" className="skill" />
+              <LabelList dataKey="name" fill="#000" angle={0} offset={5} width={200} position="left" className="skill" />
             </Bar>
           </BarChart>
         </Row>
