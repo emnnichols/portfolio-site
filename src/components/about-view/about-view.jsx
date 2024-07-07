@@ -1,11 +1,30 @@
 import { Row, Col, Container, Button } from "react-bootstrap";
 import "./about-view.scss";
+import { baseUrl } from "../constants";
 import moment from "moment";
 import { BarChart, Bar, XAxis, YAxis, LabelList } from 'recharts';
 
 import download from "../../../img/download.png";
+import { BiBorderRadius } from "react-icons/bi";
 
 export const AboutView = () => {
+
+  const downloadResume = () => {
+    fetch(baseUrl + "/resume").then((response) => {
+      response.blob().then((blob) => {
+
+        // Creating new object of PDF file
+        const fileURL =
+          window.URL.createObjectURL(blob);
+
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.target = "_blank";
+        alink.click();
+      });
+    });
+  }
 
   function duration(start) {
     const end = new Date();
@@ -60,14 +79,19 @@ export const AboutView = () => {
         </Col>
         <Row className="justify-content-center mt-4">
           <Col xl={6} lg={8} className="col-12">
-            <Button href="../../../files/2024-Resume.pdf" className="primaryButton mt-2" target="_blank" download>
+            <Button
+              onClick={downloadResume} className="primaryButton mt-2">
               <Row>
                 <Col className="col-12">
-                  <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />resume</Col></Row>
+                  <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />
+                  resume
+                </Col>
+              </Row>
             </Button></Col>
         </Row>
         <Row className="skillBarChart mt-4 justify-content-center">
           <BarChart
+            className="horizontalChart"
             layout="vertical"
             width={900}
             height={200}
@@ -82,6 +106,26 @@ export const AboutView = () => {
             >
               <LabelList dataKey="length" fill="#c3c3d1" angle={0} offset={10} width={200} position="right" className="skill" />
               <LabelList dataKey="name" fill="#000" angle={0} offset={5} width={200} position="left" className="skill" />
+            </Bar>
+          </BarChart>
+        </Row>
+        <Row className="skillBarChart mt-4 justify-content-center">
+          <BarChart
+            className="verticalChart"
+            layout="horizontal"
+            width={400}
+            height={400}
+            margin={{ top: 10, bottom: 60, left: 0, right: 0 }}
+            data={data}>
+            <YAxis type="number" label={{ value: "experience (months)", position: 'insideBottom' }} hide />
+            <XAxis type="category" hide />
+            <Bar
+              barSize={18}
+              background={{ fill: "rgba(200, 194, 205, 0.2)" }}
+              dataKey="duration"
+            >
+              <LabelList dataKey="length" fill="#c3c3d1" angle={0} offset={5} width={50} position="bottom" className="skill" />
+              <LabelList dataKey="name" fill="#000" angle={0} offset={30} width={50} position="bottom" className="skill" />
             </Bar>
           </BarChart>
         </Row>
