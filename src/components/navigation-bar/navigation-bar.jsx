@@ -13,8 +13,8 @@ export const NavigationBar = () => {
           <div style={{
             backgroundColor: "#a69eb0",
             marginTop: 15,
-            marginRight: "-15px",
-            marginLeft: "15px",
+            marginRight: "-20px",
+            marginLeft: "30px",
             width: '50%',
             height: 1.5
           }} />
