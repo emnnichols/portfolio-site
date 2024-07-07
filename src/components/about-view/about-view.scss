@@ -64,11 +64,7 @@ $primary-font: "Urbanist", sans-serif;
 
 // RESPONSIVE
 
-@media all and (max-width: 1400px) {
-
-  .tableTitle {
-    border-bottom: 1px solid #000;
-  }
+@media all and (max-width: 1000px) {
 
   .horizontalChart {
     display: none;
