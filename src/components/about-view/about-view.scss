@@ -54,11 +54,27 @@ $primary-font: "Urbanist", sans-serif;
   letter-spacing: 1px;
 }
 
+.horizontalChart {
+  display: block;
+}
+
+.verticalChart {
+  display: none;
+}
+
 // RESPONSIVE
 
 @media all and (max-width: 1400px) {
 
   .tableTitle {
     border-bottom: 1px solid #000;
+  }
+
+  .horizontalChart {
+    display: none;
+  }
+
+  .verticalChart {
+    display: block;
   }
 }
