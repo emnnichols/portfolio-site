@@ -9,7 +9,14 @@ export const NavigationBar = () => {
   return (
     <Container className="navBar">
       <Col className="col-12">
-        <Navbar className="justify-content-center">
+        <Navbar className="justify-content-center mobileNav">
+
+          <Navbar.Brand as={Link} to="/" style={{ marginLeft: 50 }}>
+            <span className="navTitle navBar">
+              Emily Nichols
+            </span></Navbar.Brand>
+        </Navbar>
+        <Navbar className="justify-content-center desktopNav">
           <div style={{
             backgroundColor: "#a69eb0",
             marginTop: 15,
@@ -20,7 +27,6 @@ export const NavigationBar = () => {
           }} />
           <Navbar.Brand as={Link} to="/">
             <span className="navTitle navBar">
-              {/* <img src={logo} width="400px" /> */}
               Emily Nichols
             </span>
           </Navbar.Brand>

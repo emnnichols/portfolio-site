@@ -13,6 +13,12 @@ body {
   font-family: "Urbanist", sans-serif;
 }
 
+// Nav
+
+.mobileNav {
+  display: none;
+}
+
 // Intro / Index page
 .introCard {
   font-family: 'Courier New', Courier, monospace;
@@ -276,6 +282,14 @@ body {
 @media all and (max-width: 991px) {
   body {
     min-width: 100%;
+  }
+
+  .mobileNav {
+    display: block;
+  }
+
+  .desktopNav {
+    display: none;
   }
 
   .navBar {
