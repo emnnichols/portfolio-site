@@ -80,7 +80,7 @@ export const AboutView = () => {
         <Row className="justify-content-center mt-4">
           <Col xl={6} lg={8} className="col-12">
             <Button
-              onClick={downloadResume} className="primaryButton mt-2">
+              onClick={downloadResume} onTouchStart={downloadResume} className="primaryButton mt-2">
               <Row>
                 <Col className="col-12">
                   <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />

@@ -13,13 +13,13 @@ export const NavigationBar = () => {
           <div style={{
             backgroundColor: "#a69eb0",
             marginTop: 15,
-            marginRight: "-20px",
-            marginLeft: "30px",
+            marginRight: 15,
+            marginLeft: 20,
             width: '50%',
             height: 1.5
           }} />
           <Navbar.Brand as={Link} to="/">
-            <span className="navTitle navBar" style={{ marginLeft: "30px" }}>
+            <span className="navTitle navBar">
               {/* <img src={logo} width="400px" /> */}
               Emily Nichols
             </span>
