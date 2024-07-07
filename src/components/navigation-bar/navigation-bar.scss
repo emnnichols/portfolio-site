@@ -10,9 +10,9 @@ $primary-font: "Urbanist", sans-serif;
 // Navigation
 
 .navBar {
+  padding-top: 10px;
   font-variant: all-small-caps;
   text-align: center;
-  padding-top: 10px;
 }
 
 .navLinks,
@@ -22,16 +22,16 @@ $primary-font: "Urbanist", sans-serif;
 }
 
 .navTitle {
-  font-family: "Silkscreen", sans-serif;
-  font-size: 35px;
+  font-family: "Abril Fatface", serif;
+  font-size: 65px;
   cursor: crosshair;
 }
 
 .navItem {
   font-family: "Urbanist", sans-serif;
   font-size: 20px;
-  border-top: 1px dotted rgb(176, 154, 214);
   padding: 0px 10px;
+  margin-top: -20px;
   transition: all 0.4s;
 }
 
