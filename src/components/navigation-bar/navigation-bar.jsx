@@ -1,8 +1,7 @@
-import { Row, Col, Container, Nav, Navbar } from "react-bootstrap";
+import { Col, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import "./navigation-bar.scss";
-import logo from "../../../img/navlogo.png";
 
 export const NavigationBar = () => {
 
@@ -10,7 +9,7 @@ export const NavigationBar = () => {
     <Container className="navBar">
       <Col className="col-12">
         <Navbar className="justify-content-center mobileNav">
-          <Navbar.Brand as={Link} to="/" style={{ marginLeft: '10%' }}>
+          <Navbar.Brand as={Link} to="/" style={{ marginLeft: '8%' }}>
             <span className="navTitle navBar">
               Emily Nichols
             </span></Navbar.Brand>

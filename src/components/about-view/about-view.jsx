@@ -9,6 +9,23 @@ import { BiBorderRadius } from "react-icons/bi";
 
 export const AboutView = () => {
 
+  const viewResume = () => {
+    fetch(baseUrl + "/resume").then((response) => {
+      response.blob().then((blob) => {
+
+        // Creating new object of PDF file
+        const fileURL =
+          window.URL.createObjectURL(blob);
+
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.target = "_blank";
+        alink.click();
+      });
+    });
+  }
+
   const downloadResume = () => {
     fetch(baseUrl + "/resume").then((response) => {
       response.blob().then((blob) => {
@@ -21,7 +38,7 @@ export const AboutView = () => {
         let alink = document.createElement("a");
         alink.href = fileURL;
         alink.target = "_blank";
-        alink.download = "Emily_Nichols_Resume.pdf"
+        alink.download = "Emily_Nichols_Resume.pdf";
         alink.click();
       });
     });
@@ -78,10 +95,22 @@ export const AboutView = () => {
           I attended College of Southern Nevada and have an Associate's degree in General Studies and also a degree in Digital Forensics.
           <br /><br />Currently, I am a student in the Full-Stack Web Development program at CareerFoundry while working as a Home Health Aide.
         </Col>
-        <Row className="justify-content-center mt-4">
+        <Row className="justify-content-center mobileView mt-4">
           <Col xl={6} lg={8} className="col-12">
             <Button
               onClick={downloadResume} className="primaryButton mt-2">
+              <Row>
+                <Col className="col-12">
+                  <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />
+                  resume
+                </Col>
+              </Row>
+            </Button></Col>
+        </Row>
+        <Row className="justify-content-center desktopView mt-4">
+          <Col xl={6} lg={8} className="col-12">
+            <Button
+              onClick={viewResume} className="primaryButton mt-2">
               <Row>
                 <Col className="col-12">
                   <img src={download} className="downloadIcon" width="30px" aria-label="Download" alt="Download icon created by Freepik" />

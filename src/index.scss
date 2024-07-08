@@ -56,11 +56,21 @@ body {
   border-radius: 50px 10px 10px 50px;
 }
 
-// About page + Project cards
+// About page
 
 .about {
   margin-bottom: 50px;
 }
+
+.desktopView {
+  display: inherit;
+}
+
+.mobileView {
+  display: none;
+}
+
+// Projects
 
 .card {
   border: none;
@@ -289,6 +299,14 @@ body {
   }
 
   .desktopNav {
+    display: none;
+  }
+
+  .mobileView {
+    display: inherit;
+  }
+
+  .desktopView {
     display: none;
   }
 
