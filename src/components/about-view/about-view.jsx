@@ -5,7 +5,6 @@ import moment from "moment";
 import { BarChart, Bar, XAxis, YAxis, LabelList } from 'recharts';
 
 import download from "../../../img/download.png";
-import { BiBorderRadius } from "react-icons/bi";
 
 export const AboutView = () => {
 
@@ -61,7 +60,7 @@ export const AboutView = () => {
       fill: '#b5bfb0'
     },
     {
-      name: "CSS + Sass",
+      name: "CSS + SCSS",
       length: ` ${coreSkills < 1 ? `${coreSkills * 10} mos` : `${coreSkills} yrs`}`,
       duration: (coreSkills * 10),
       fill: '#dec2cb'
